@@ -19,11 +19,9 @@ public class Circulo {
     }
 
     public double area(float radio){
-        double area=Math.PI * Math.pow(radio, 2);
-        return area;
+        return Math.PI * Math.pow(radio, 2);
     }
     public double perimetro(float radio){
-        double perimetro=2*Math.PI*radio;
-        return perimetro;
+        return 2*Math.PI*radio;
     }
 }
