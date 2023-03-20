@@ -79,5 +79,77 @@ public class Fecha {
         }
         return cantDias;
     }
+    void corta(){
+        valida();
+        System.out.println(dia + "-" + mes + "-" + anio);
+    }
+    void larga(){
+        valida();
+        String mesLetra = switch (mes) {
+            case 1 -> "Enero";
+            case 2 -> "Febrero";
+            case 3 -> "Marzo";
+            case 4 -> "Abril";
+            case 5 -> "Mayo";
+            case 6 -> "Junio";
+            case 7 -> "Julio";
+            case 8 -> "Agosto";
+            case 9 -> "Septiembre";
+            case 10 -> "Octubre";
+            case 11 -> "Noviembre";
+            default -> "Diciembre";
+        };
+        System.out.println(dia + " de " + mesLetra + " de " + anio);
+    }
 
+    void siguiente(){
+        valida();
+        int cantDias=diasMes(mes);
+        if(cantDias==dia){
+            dia=1;
+            mes++;
+        }
+        else{
+            dia++;
+        }
+    }
+    void anterior(){
+        valida();
+        int cantDias=diasMes(mes);
+        if(dia==1){
+            dia=cantDias;
+            mes--;
+        }
+        else {
+            dia--;
+        }
+    }
+    void igualQue(Fecha fecha){
+        valida();
+        int anio1 = fecha.anio;
+        int mes1  = fecha.mes;
+        int dia1  = fecha.dia;
+        if(anio == anio1 && mes == mes1 && dia == dia1) System.out.println("Las fechas son iguales");
+        else System.out.println("Las fechas no son iguales");
+    }
+    void menorQue(Fecha fecha){
+        valida();
+        int anio1 = fecha.anio;
+        int mes1  = fecha.mes;
+        int dia1  = fecha.dia;
+        if(anio < anio1)System.out.println("La fecha es menor");
+        else if (anio1 == anio && mes < mes1) System.out.println("La fecha es menor");
+        else if (anio1 == anio && mes == mes1 && dia < dia1) System.out.println("La fecha es menor");
+        else System.out.println("La fecha no es menor");
+    }
+    void mayorQue(Fecha fecha){
+        valida();
+        int anio1 = fecha.anio;
+        int mes1  = fecha.mes;
+        int dia1  = fecha.dia;
+        if(anio > anio1)System.out.println("La fecha es mayor");
+        else if (anio1 == anio && mes > mes1) System.out.println("La fecha es mayor");
+        else if (anio1 == anio && mes == mes1 && dia > dia1) System.out.println("La fecha es mayor");
+        else System.out.println("La fecha no es mayor");
+    }
 }
