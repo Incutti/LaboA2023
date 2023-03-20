@@ -40,21 +40,17 @@ public class Fecha {
     }
 
     void valida(){
-        switch (mes) {
-            case 1, 3, 5, 7, 8, 10, 12 -> {
-                if (dia < 1 || dia > 31) {
-                    dia = 1;
-                }
-            }
-            case 4, 6, 9, 11 -> {
+            if (mes == 1 || mes== 3||mes== 5||mes== 7||mes== 8||mes== 10||mes== 12) {
+                    if (dia < 1 || dia > 31) {
+                        dia = 1;
+                    }
+            } else if (mes == 4 ||mes == 6 ||mes== 9||mes== 11 ) {
                 if (dia < 1 || dia > 30) {
                     dia = 1;
                 }
-            }
-            default -> {
+            }else{
                 if (dia < 1 || dia > 28) {
                     dia = 1;
-                }
             }
         }
         if(mes<1 || mes>12){
@@ -66,16 +62,12 @@ public class Fecha {
     }
     int diasMes(int mes){
         int cantDias;
-        switch (mes) {
-            case 1, 3, 5, 7, 8, 10, 12 -> {
-                cantDias=31;
-            }
-            case 4, 6, 9, 11 -> {
-                cantDias=30;
-            }
-            default -> {
-                cantDias=28;
-            }
+        if (mes == 1 || mes== 3||mes== 5||mes== 7||mes== 8||mes== 10||mes== 12) {
+            cantDias=31;
+        } else if (mes == 4 ||mes == 6 ||mes== 9||mes== 11 ) {
+            cantDias=30;
+        }else {
+            cantDias = 28;
         }
         return cantDias;
     }
@@ -85,19 +77,44 @@ public class Fecha {
     }
     void larga(){
         valida();
-        String mesLetra = switch (mes) {
-            case 1 -> "Enero";
-            case 2 -> "Febrero";
-            case 3 -> "Marzo";
-            case 4 -> "Abril";
-            case 5 -> "Mayo";
-            case 6 -> "Junio";
-            case 7 -> "Julio";
-            case 8 -> "Agosto";
-            case 9 -> "Septiembre";
-            case 10 -> "Octubre";
-            case 11 -> "Noviembre";
-            default -> "Diciembre";
+        String mesLetra ;
+         switch (mes) {
+            case 1 :
+                mesLetra="Enero" ;
+                break;
+             case 2 :
+                 mesLetra= "Febrero";
+                 break;
+            case 3:
+                mesLetra="Marzo";
+                break;
+            case 4 :
+                mesLetra="Abril";
+                break;
+            case 5 :
+                mesLetra="Mayo";
+                break;
+            case 6 :
+                mesLetra="Junio";
+                break;
+            case 7 :
+                mesLetra="Julio";
+                break;
+            case 8 :
+                mesLetra="Agosto";
+                break;
+            case 9 :
+                mesLetra="Septiembre";
+                break;
+            case 10 :
+                mesLetra="Octubre";
+                break;
+            case 11 :
+                mesLetra="Noviembre";
+                break;
+            default :
+                mesLetra="Diciembre";
+                break;
         };
         System.out.println(dia + " de " + mesLetra + " de " + anio);
     }
