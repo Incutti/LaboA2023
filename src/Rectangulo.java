@@ -27,13 +27,12 @@ public class Rectangulo {
         this.altura = altura;
     }
 
-    public float area(float base, float altura){
+    public float area(){
         return base*altura;
     }
 
-    public float perimetro (float base, float altura){
+    public float perimetro (){
         return base*2+altura*2;
     }
-
 }
 

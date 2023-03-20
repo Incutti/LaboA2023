@@ -18,10 +18,10 @@ public class Circulo {
         this.radio = radio;
     }
 
-    public double area(float radio){
+    public double area(){
         return Math.PI * Math.pow(radio, 2);
     }
-    public double perimetro(float radio){
+    public double perimetro(){
         return 2*Math.PI*radio;
     }
 }

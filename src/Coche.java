@@ -50,20 +50,20 @@ public class Coche {
         this.velocidad = velocidad;
     }
 
-    public int acelerar(int velocidad){
+    public int acelerar(){
         velocidad++;
         return velocidad;
     }
-    public int frenar(int velocidad) {
+    public int frenar() {
         if (velocidad > 0) {
 
             velocidad--;
         }
         return velocidad;
     }
-    public void mostrarVelocidad(int velocidad){
-
+    public void mostrarVelocidad(){
         System.out.println(velocidad);
 
     }
 }
+

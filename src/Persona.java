@@ -37,7 +37,7 @@ public class Persona {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public void impresionDeHumanos(String nombre, int edad, String direccion){
+    public void impresionDeHumanos(){
         System.out.println("El humano llamado " + nombre + ", tiene " + edad + " años y vive en " + direccion);
     }
 }
