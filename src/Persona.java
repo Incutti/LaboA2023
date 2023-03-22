@@ -13,8 +13,11 @@ public class Persona {
         this.edad = edad;
         this.direccion = direccion;
     }
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public String getNombre() {
+        public String getNombre() {
         return nombre;
     }
 
