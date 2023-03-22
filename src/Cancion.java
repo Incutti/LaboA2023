@@ -10,8 +10,10 @@ public class Cancion {
     }
 
     public Cancion() {
-        titulo = "titulo";
-        autor = new Persona();
+        titulo = "";
+        autor = new Persona("");
+        duracion = 123;
+        genero = "country";
     }
 
     public String getTitulo() {
