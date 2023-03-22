@@ -121,10 +121,16 @@ public class Fecha {
 
     void siguiente(){
         valida();
-        int cantDias=diasMes(mes);
+        int cantDias;
+        cantDias = diasMes(mes);
         if(cantDias==dia){
             dia=1;
-            mes++;
+            if (mes==12){
+                anio++;
+                mes=1;
+            }else{
+                mes++;
+            }
         }
         else{
             dia++;
@@ -134,8 +140,14 @@ public class Fecha {
         valida();
         int cantDias=diasMes(mes);
         if(dia==1){
-            dia=cantDias;
-            mes--;
+            if (mes==1){
+                anio--;
+                mes=12;
+            }else {
+                mes--;
+            }
+        cantDias = diasMes(mes);
+        dia = cantDias;
         }
         else {
             dia--;
