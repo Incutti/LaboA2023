@@ -14,8 +14,10 @@ public class Cafetera {
         this.cantMaxima = cantMaxima;
         if(cantActual>cantMaxima){
             this.cantActual=this.cantMaxima;
+        } else{
+            this.cantActual = cantActual;
         }
-        this.cantActual = cantActual;
+
     }
 
     public int getCantMaxima() {
