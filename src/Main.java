@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner entrada=new Scanner(System.in);
         // UNIDAD 1
         /*
         Libro libro1=new Libro();
@@ -32,27 +33,55 @@ public class Main {
 
         // EJERCICIO 1
         ArrayList<Integer> numeros = new ArrayList<Integer>();
-        numeros.add(2);
-        numeros.add(4);
+        int cantidad;
+        System.out.println("Ingrese la cantidad de numeros que va a ingresar");
+        cantidad=entrada.nextInt();
+        System.out.println("Elija sus " + cantidad + " numeros");
+        for(int i=0; i<cantidad;i++){
+            numeros.add(entrada.nextInt());
+            entrada.nextLine();
+        }
         int suma = 0;
         for (Integer numero : numeros) {
             suma = suma + numero;
         }
         System.out.println(suma);
 
+
+
         //EJERCICIO 2
-        char letraEspecifica = 'a';
+        System.out.println("Elija con que letra debe coincidir la inicial");
+        String letraEspecifica = entrada.nextLine();
+        String palabraIngresada;
         ArrayList<String> palabras = new ArrayList<String>();
-        palabras.add("ariana");
-        palabras.add("mariana");
+        System.out.println("Ingrese la cantidad de nombres que va a ingresar");
+        cantidad=entrada.nextInt();
+        entrada.nextLine();
+        System.out.println("Elija sus " + cantidad + " nombres");
+        for(int i=0; i<cantidad;i++){
+            palabraIngresada=entrada.nextLine();
+            palabras.add(palabraIngresada);
+        }
         for (String palabra : palabras) {
-            if (palabra.charAt(0) == letraEspecifica) {
+            if (palabra.charAt(0) == letraEspecifica.charAt(0)) {
                 System.out.println(palabra);
             }
         }
 
+
+
         //EJERCICIO 3
         ArrayList<Persona>personas=new ArrayList<Persona>();
+
+        System.out.println("Ingrese la cantidad de nombres que va a ingresar");
+        cantidad=entrada.nextInt();
+        System.out.println("Elija sus " + cantidad + " nombres");
+        String nombre;
+        for(int i=0; i<cantidad;i++){
+            nombre=entrada.next();
+            Persona persona1 = new Persona(nombre);
+            personas.add(persona1);
+        }
         for(Persona persona:personas){
             if(persona.getEdad()>30){
                 persona.impresionDeHumanos();
