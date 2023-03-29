@@ -1,18 +1,17 @@
-import com.sun.org.apache.xpath.internal.operations.Neg;
-
 import java.util.ArrayList;
 
 public class Alumno {
     private String nombre;
     private String apellido;
     private Fecha fechaDeNacimiento;
-    private ArrayList<Float> listaDeNotas;
+    private ArrayList<Materia> listaDeMaterias;
 
     public Alumno(){
         nombre="Cristian";
         apellido="Fernández";
         fechaDeNacimiento=new Fecha();
-        listaDeNotas= new ArrayList<Float>();
+        listaDeMaterias= new ArrayList<Materia>();
+
     }
 
     public String getNombre(){
@@ -24,8 +23,8 @@ public class Alumno {
     public Fecha getFechaDeNacimiento(){
         return fechaDeNacimiento;
     }
-    public ArrayList<Float> getListaDeNotas(){
-        return listaDeNotas;
+    public ArrayList<Materia> getListaDeMaterias(){
+        return listaDeMaterias;
     }
 
     public void setNombre(String nombre) {
@@ -37,29 +36,34 @@ public class Alumno {
     public void setFechaDeNacimiento(Fecha fechaDeNacimiento){
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
-    public void setListaDeNotas(ArrayList<Float> listaDeNotas){
-        this.listaDeNotas=listaDeNotas;
+    public void listaDeMaterias(){
+        this.listaDeMaterias=listaDeMaterias;
     }
 
-    public void menorNota(){
-        float notaMenor=10;
-        for(Float nota : listaDeNotas){
-            if(nota<notaMenor){
-                notaMenor=nota;
+    public void menorNota() {
+        float notaMenor = 10;
+        for (Materia materia : listaDeMaterias) {
+            for(Float nota: materia.getListaDeNotas()) {
+                if (nota < notaMenor) {
+                    notaMenor = nota;
+                }
             }
         }
     }
+
     public void mayorNota(){
         float notaMayor=0;
-        for(Float nota : listaDeNotas){
-            if(nota>notaMayor){
-                notaMayor=nota;
+        for(Materia materia : listaDeMaterias){
+            for(Float nota : materia.getListaDeNotas()){
+                if(nota>notaMayor){
+                    notaMayor=nota;
+                }
             }
         }
     }
-    public void agregarNota(Float nota){
 
-        listaDeNotas.add(nota);
+    public void agregarNota(Materia materia, Float nota){
+        materia.getListaDeNotas().add(nota);
     }
 
 }
