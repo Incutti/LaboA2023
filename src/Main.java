@@ -75,11 +75,14 @@ public class Main {
 
         System.out.println("Ingrese la cantidad de nombres que va a ingresar");
         cantidad=entrada.nextInt();
-        System.out.println("Elija sus " + cantidad + " nombres");
+        System.out.println("Elija sus " + cantidad + " nombres con sus respectivas edades");
         String nombre;
+        int edad;
         for(int i=0; i<cantidad;i++){
             nombre=entrada.next();
-            Persona persona1 = new Persona(nombre);
+            edad=entrada.nextInt();
+            entrada.nextLine();
+            Persona persona1 = new Persona(nombre, edad);
             personas.add(persona1);
         }
         for(Persona persona:personas){
