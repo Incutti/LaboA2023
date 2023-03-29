@@ -23,8 +23,8 @@ public class CD {
         return contador;
     }
 
-    void verCancion(int posicion) {
-        System.out.println(canciones.get(posicion).getTitulo());
+    Cancion verCancion(int posicion) {
+        return canciones.get(posicion);
     }
 
     void grabaCancion(int posicion, Cancion nuevaCancion) {
