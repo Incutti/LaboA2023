@@ -58,6 +58,7 @@ public class Alumno {
         }
     }
     public void agregarNota(Float nota){
+
         listaDeNotas.add(nota);
     }
 
