@@ -27,7 +27,9 @@ public class Materia {
         this.listaDeNotas = listaDeNotas;
     }
 
-
+    public void agregarNota(Float nota){
+        listaDeNotas.add(nota);
+    }
     public Float promedioNotasMateria(){
         float suma=0;
         for(Float nota: listaDeNotas){
