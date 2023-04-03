@@ -36,9 +36,7 @@ public class Alumno {
     public void setFechaDeNacimiento(Fecha fechaDeNacimiento){
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
-    public void listaDeMaterias(){
-        this.listaDeMaterias=listaDeMaterias;
-    }
+    public void setListaDeMaterias(ArrayList<Materia> listaDeMaterias) { this.listaDeMaterias = listaDeMaterias; }
 
     public void menorNota() {
         float notaMenor = 10;
@@ -65,5 +63,18 @@ public class Alumno {
     public void agregarNota(Materia materia, Float nota){
         materia.getListaDeNotas().add(nota);
     }
-
+    public void agregarMateria(Materia materia){
+        listaDeMaterias.add(materia);
+    }
+    public Float promedioNotasAlumno(){
+        float suma=0;
+        float promedio=0;
+        for(Materia materia : listaDeMaterias){
+            for(Float nota: materia.getListaDeNotas()){
+                suma=suma+nota;
+            }
+            promedio=promedio+suma/materia.getListaDeNotas().size();
+        }
+        return promedio/listaDeMaterias.size();
+    }
 }

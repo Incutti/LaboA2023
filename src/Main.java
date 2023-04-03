@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner entrada=new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
         // UNIDAD 1
         /*
         Libro libro1=new Libro();
@@ -28,10 +28,11 @@ public class Main {
         System.out.println(cancion.getAutor().getNombre());
         System.out.println(cancion.getDuracion());
         System.out.println(cancion.getGenero());
-        */
+
         // UNIDAD 2
 
         // EJERCICIO 1
+
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         int cantidad;
         System.out.println("Ingrese la cantidad de numeros que va a ingresar");
@@ -90,5 +91,12 @@ public class Main {
                 persona.impresionDeHumanos();
             }
         }
+
+    */
+        // EJERCICIO 6
+        Materia materia=new Materia();
+        Materia materia2=new Materia();
+        Alumno alumno=new Alumno();
+
     }
 }

@@ -27,6 +27,14 @@ public class Materia {
         this.listaDeNotas = listaDeNotas;
     }
 
+
+    public Float promedioNotasMateria(){
+        float suma=0;
+        for(Float nota: listaDeNotas){
+            suma=suma+nota;
+        }
+        return suma/listaDeNotas.size();
+    }
 }
 
 
