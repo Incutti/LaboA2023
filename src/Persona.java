@@ -1,17 +1,20 @@
 public class Persona {
     private String nombre;
     private int edad;
+    private Fecha fechaNacimiento;
     private String direccion;
 
     public Persona() {
-        this.nombre = "Pablo";
-        this.edad = 15;
-        this.direccion = "Cabildo 5000";
+        nombre = "Pablo";
+        edad = 2023-fechaNacimiento.getAnio();
+        fechaNacimiento = new Fecha();
+        direccion = "Cabildo 5000";
     }
-    public Persona(String nombre, int edad, String direccion) {
+    public Persona(String nombre, String direccion, Fecha fechaNacimiento) {
         this.nombre = nombre;
-        this.edad = edad;
+        edad = 2023- fechaNacimiento.getAnio();
         this.direccion = direccion;
+        this.fechaNacimiento=fechaNacimiento;
     }
     public Persona(String nombre) {
         this.nombre = nombre;
@@ -44,6 +47,15 @@ public class Persona {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public Fecha getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Fecha fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public void impresionDeHumanos(){
         System.out.println("El humano llamado " + nombre + ", tiene " + edad + " años y vive en " + direccion);
     }
