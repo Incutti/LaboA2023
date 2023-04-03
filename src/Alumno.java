@@ -60,20 +60,18 @@ public class Alumno {
         }
     }
 
-    public void agregarNota(Materia materia, Float nota){
-        materia.getListaDeNotas().add(nota);
-    }
     public void agregarMateria(Materia materia){
         listaDeMaterias.add(materia);
     }
+
+    public void ponerNota(Materia materia, Float nota){
+        materia.agregarNota(nota);
+    }
+
     public Float promedioNotasAlumno(){
-        float suma=0;
         float promedio=0;
-        for(Materia materia : listaDeMaterias){
-            for(Float nota: materia.getListaDeNotas()){
-                suma=suma+nota;
-            }
-            promedio=promedio+suma/materia.getListaDeNotas().size();
+        for(Materia materia:listaDeMaterias){
+            promedio=promedio+materia.promedioNotasMateria();
         }
         return promedio/listaDeMaterias.size();
     }
