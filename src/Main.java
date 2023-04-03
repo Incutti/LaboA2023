@@ -92,11 +92,11 @@ public class Main {
             }
         }
 
-    */
+
         // EJERCICIO 6
         Materia materia=new Materia();
         Materia materia2=new Materia();
         Alumno alumno=new Alumno();
-
+    */
     }
 }
