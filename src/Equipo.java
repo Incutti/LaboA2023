@@ -6,18 +6,18 @@ public class Equipo {
     private ArrayList<Jugador> jugadores;
     private int numCapitan;
     private ArrayList<Boolean> diaDisponible;
-    private ArrayList<String> horaDisponible;
+    private String horaDisponible;
 
     public Equipo(){
         nombreEquipo="El matador";
         barrioProcedencia="no tiene";
         jugadores=new ArrayList<Jugador>(10);
         numCapitan=1;
-        horaDisponible=new ArrayList<String>(3);
+        horaDisponible="mañana";
         diaDisponible=new ArrayList<Boolean>(6);
     }
 
-    public Equipo(String nombreEquipo, String barrioProcedencia, ArrayList<Jugador> integrantes, int numCapitan, ArrayList<String> horaDisponible, ArrayList<Boolean> diaDisponible) {
+    public Equipo(String nombreEquipo, String barrioProcedencia, ArrayList<Jugador> integrantes, int numCapitan, String horaDisponible, ArrayList<Boolean> diaDisponible) {
         this.nombreEquipo = nombreEquipo;
         this.barrioProcedencia = barrioProcedencia;
         this.jugadores = integrantes;
@@ -66,11 +66,11 @@ public class Equipo {
         this.diaDisponible = diaDisponible;
     }
 
-    public ArrayList<String> getHoraDisponible() {
+    public String getHoraDisponible() {
         return horaDisponible;
     }
 
-    public void setHoraDisponible(ArrayList<String> horaDisponible) {
+    public void setHoraDisponible(String horaDisponible) {
         this.horaDisponible = horaDisponible;
     }
 

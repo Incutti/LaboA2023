@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.wsdl.writer.document.Part;
+
 import java.util.ArrayList;
 
 public class Campeonato {
@@ -47,5 +49,36 @@ public class Campeonato {
         }
     }
 
+    public void armarFixture(){
+        for(int i=0;i<listaDeEquipos.size()-1;i++){
+            for (int j=i++;j<listaDeEquipos.size();j++) {
+                Partido partido = new Partido(listaDeEquipos.get(i), listaDeEquipos.get(j));
+                listaDePartidos.add(partido);
+            }
+        }
+    }
 }
 // (cantequipos/2) ->partidos x fecha -------- (cantequipos/2)*(cantequipos-1) ->partidos totales
+    /*
+    public ArrayList<Integer> corroborarHorario(){
+        ArrayList<Integer> horarios = new ArrayList<>();
+        int maniana=0, tarde=0, noche=0;
+        for (Equipo listaDeEquipo : listaDeEquipos) {
+            switch (listaDeEquipo.getHoraDisponible()) {
+                case "mañana":
+                    maniana++;
+                    break;
+                case "tarde":
+                    tarde++;
+                    break;
+                case "noche":
+                    noche++;
+                    break;
+            }
+        }
+        horarios.add(maniana);
+        horarios.add(tarde);
+        horarios.add(noche);
+        return horarios;
+    }
+    */
