@@ -1,5 +1,5 @@
 public class Jugador {
-    private Persona jugador;
+    private Persona jugador ;
     private int numero;
     private Boolean capitan;
 
