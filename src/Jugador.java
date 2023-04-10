@@ -1,25 +1,17 @@
-public class Jugador {
-    private Persona jugador ;
+public class Jugador extends Persona{
     private int numero;
     private Boolean capitan;
 
     public Jugador(){
-        jugador=new Persona();
+        super();
         numero=1;
         capitan=false;
     }
-    public Jugador(Persona jugador, int numero){
-        this.jugador=jugador;
+    public Jugador(/*Persona jugador,*/String nombre, int numero){
+        //this.jugador=jugador;
+        super(nombre);
         this.numero=numero;
         capitan=false;
-    }
-
-    public Persona getJugador() {
-        return jugador;
-    }
-
-    public void setJugador(Persona jugador) {
-        this.jugador = jugador;
     }
 
     public int getNumero() {

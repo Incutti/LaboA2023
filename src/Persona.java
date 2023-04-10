@@ -1,17 +1,20 @@
 public class Persona {
     private String nombre;
+    private String apellido;
     private int edad;
     private Fecha fechaNacimiento;
     private String direccion;
 
     public Persona() {
         nombre = "Pablo";
+        apellido = "Crisnoselacome";
         edad = 2023-fechaNacimiento.getAnio();
         fechaNacimiento = new Fecha();
         direccion = "Cabildo 5000";
     }
-    public Persona(String nombre, String direccion, Fecha fechaNacimiento) {
+    public Persona(String nombre, String apellido, String direccion, Fecha fechaNacimiento) {
         this.nombre = nombre;
+        this.apellido = apellido;
         edad = 2023- fechaNacimiento.getAnio();
         this.direccion = direccion;
         this.fechaNacimiento=fechaNacimiento;
@@ -24,7 +27,7 @@ public class Persona {
         this.edad = edad;
     }
 
-        public String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -54,6 +57,14 @@ public class Persona {
 
     public void setFechaNacimiento(Fecha fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public void impresionDeHumanos(){
