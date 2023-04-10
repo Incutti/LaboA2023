@@ -1,7 +1,16 @@
+package Cosas;
+
 public class Vehiculo {
     private String marca, modelo, color;
     private int cantidadRuedas , anioFabricacion;
 
+    public Vehiculo (){
+        marca="Mercedes";
+        modelo="AMG1";
+        color="rojo";
+        cantidadRuedas=4;
+        anioFabricacion=2021;
+    }
     public Vehiculo(String marca, String modelo, String color, int cantidadRuedas, int anioFabricacion) {
         this.marca = marca;
         this.modelo = modelo;

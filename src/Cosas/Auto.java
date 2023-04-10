@@ -3,43 +3,37 @@ package Cosas;
 public class Auto extends Vehiculo{
 
     private int velocidad;
+    private String patente;
+    private boolean descapotable;
 
 
     public Auto() {
-        this.marca = "Volkswagen";
-        this.modelo = "Nivus";
-        this.color = "blanco";
-        this.velocidad= 0;
+        super();
+        velocidad= 0;
+        patente="AD490XD";
+        descapotable=false;
     }
-    public Auto(String marca, String modelo, String color, int velocidad) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.color = color;
+    public Auto(String marca, String modelo, String color, int velocidad, String patente, boolean descapotable) {
+        super(marca, modelo, color);
         this.velocidad= velocidad;
+        this.patente = patente;
+        this.descapotable=descapotable;
     }
 
-    public String getMarca() {
-        return marca;
+    public boolean isDescapotable() {
+        return descapotable;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setDescapotable(boolean descapotable) {
+        this.descapotable = descapotable;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getPatente() {
+        return patente;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void setPatente(String patente) {
+        this.patente = patente;
     }
 
     public int getVelocidad() {
@@ -63,7 +57,9 @@ public class Auto extends Vehiculo{
     }
     public void mostrarVelocidad(){
         System.out.println(velocidad);
-
     }
+
+
+
 }
 
