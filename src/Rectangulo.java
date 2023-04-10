@@ -1,4 +1,4 @@
-public class Rectangulo {
+public class Rectangulo extends FiguraGeometrica {
     private float base;
     private float altura;
 
@@ -27,11 +27,13 @@ public class Rectangulo {
         this.altura = altura;
     }
 
-    public float area(){
+    @Override
+    public double area(){
         return base*altura;
     }
 
-    public float perimetro (){
+    @Override
+    public double perimetro (){
         return base*2+altura*2;
     }
 }

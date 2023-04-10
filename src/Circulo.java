@@ -1,4 +1,4 @@
-public class Circulo {
+public class Circulo extends FiguraGeometrica {
 
     private float radio;
 
@@ -17,10 +17,9 @@ public class Circulo {
     public void setRadio(float radio) {
         this.radio = radio;
     }
-
-    public double area(){
-        return Math.PI * Math.pow(radio, 2);
-    }
+    @Override
+    public double area(){ return Math.PI * Math.pow(radio, 2); }
+    @Override
     public double perimetro(){
         return 2*Math.PI*radio;
     }
