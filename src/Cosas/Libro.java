@@ -1,4 +1,6 @@
-import java.sql.SQLOutput;
+package Cosas;
+
+import Humanos.Persona;
 
 public class Libro {
     private String titulo;

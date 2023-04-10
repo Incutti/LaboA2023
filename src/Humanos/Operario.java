@@ -1,4 +1,8 @@
-public class Operario extends Empleado{
+package Humanos;
+
+import Humanos.Empleado;
+
+public class Operario extends Empleado {
     public Operario(String nombre){
         super (nombre);
     }

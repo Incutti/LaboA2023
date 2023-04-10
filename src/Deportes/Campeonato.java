@@ -1,4 +1,4 @@
-import com.sun.xml.internal.ws.wsdl.writer.document.Part;
+package Deportes;
 
 import java.util.ArrayList;
 
@@ -63,7 +63,7 @@ public class Campeonato {
     public ArrayList<Integer> corroborarHorario(){
         ArrayList<Integer> horarios = new ArrayList<>();
         int maniana=0, tarde=0, noche=0;
-        for (Equipo listaDeEquipo : listaDeEquipos) {
+        for (Deportes.Equipo listaDeEquipo : listaDeEquipos) {
             switch (listaDeEquipo.getHoraDisponible()) {
                 case "mañana":
                     maniana++;

@@ -1,3 +1,5 @@
+package Humanos;
+
 public class Tecnico extends Operario{
     public Tecnico(String nombre){
         super(nombre);

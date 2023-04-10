@@ -1,3 +1,5 @@
+import Humanos.*;
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,13 +7,13 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         // UNIDAD 1
         /*
-        Libro libro1=new Libro();
-        Libro libro=new Libro("cualquier cosa",new Persona(),122341,124124,"string",new Fecha(12,12,2012));
+        Objetos.Libro libro1=new Objetos.Libro();
+        Objetos.Libro libro=new Objetos.Libro("cualquier cosa",new Humanos.Persona(),122341,124124,"string",new Fecha(12,12,2012));
         libro.mostrarInfo();
         libro.libroAnterior(libro1);
         // ------
-        Cafetera cafetera= new Cafetera();
-        Taza taza=new Taza();
+        Objetos.Cafetera cafetera= new Objetos.Cafetera();
+        Objetos.Taza taza=new Objetos.Taza();
         cafetera.llenarCafetera();
         System.out.println(cafetera.getCantActual());
         cafetera.servirTaza(taza);
@@ -22,7 +24,7 @@ public class Main {
         cafetera.agregarCafe(333);
         System.out.println(cafetera.getCantActual());
         // ------
-        Cancion cancion=new Cancion();
+        Objetos.Cancion cancion=new Objetos.Cancion();
         System.out.println(cancion.getTitulo());
         System.out.println(cancion.getAutor().getNombre());
         System.out.println(cancion.getDuracion());
@@ -71,7 +73,7 @@ public class Main {
 
 
         //EJERCICIO 3
-        ArrayList<Persona>personas=new ArrayList<Persona>();
+        ArrayList<Humanos.Persona>personas=new ArrayList<Humanos.Persona>();
 
         System.out.println("Ingrese la cantidad de nombres que va a ingresar");
         cantidad=entrada.nextInt();
@@ -82,10 +84,10 @@ public class Main {
             nombre=entrada.next();
             edad=entrada.nextInt();
             entrada.nextLine();
-            Persona persona1 = new Persona(nombre, edad);
+            Humanos.Persona persona1 = new Humanos.Persona(nombre, edad);
             personas.add(persona1);
         }
-        for(Persona persona:personas){
+        for(Humanos.Persona persona:personas){
             if(persona.getEdad()>30){
                 persona.impresionDeHumanos();
             }
@@ -95,7 +97,7 @@ public class Main {
         // EJERCICIO 6
         Materia materia=new Materia();
         Materia materia2=new Materia();
-        Alumno alumno=new Alumno();
+        Humanos.Alumno alumno=new Humanos.Alumno();
     */
         Empleado E1=new Empleado("manuel");
         Directivo D1 =new Directivo("Martin");

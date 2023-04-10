@@ -1,3 +1,5 @@
+package Cosas;
+
 public class Taza {
     private int cantMaxima;
     private int cantActual;

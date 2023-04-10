@@ -1,3 +1,5 @@
+package Humanos;
+
 public class Jugador extends Persona{
     private int numero;
     private Boolean capitan;
@@ -7,7 +9,7 @@ public class Jugador extends Persona{
         numero=1;
         capitan=false;
     }
-    public Jugador(/*Persona jugador,*/String nombre, int numero){
+    public Jugador(/*Humanos.Persona jugador,*/String nombre, int numero){
         //this.jugador=jugador;
         super(nombre);
         this.numero=numero;

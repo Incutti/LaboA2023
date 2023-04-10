@@ -1,3 +1,7 @@
+package Deportes;
+
+import Humanos.Jugador;
+
 import java.util.ArrayList;
 
 public class Partido {

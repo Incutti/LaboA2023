@@ -1,3 +1,5 @@
+package Formitas;
+
 public class Rectangulo extends FiguraGeometrica {
     private float base;
     private float altura;

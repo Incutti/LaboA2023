@@ -1,3 +1,7 @@
+package Cosas;
+
+import Humanos.Persona;
+
 public class Cancion {
     private String titulo;
     private Persona autor;

@@ -1,4 +1,8 @@
-public class Directivo extends Empleado{
+package Humanos;
+
+import Humanos.Empleado;
+
+public class Directivo extends Empleado {
     public Directivo(String nombre){
         super (nombre);
     }
