@@ -1,4 +1,5 @@
-package src
+package tiempo;
+
 public class Fecha {
     private int dia;
     private int mes;

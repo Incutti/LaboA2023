@@ -1,19 +1,17 @@
 package Cosas;
 
-public class Coche {
-    private String marca;
-    private String modelo;
-    private String color;
+public class Auto extends Vehiculo{
+
     private int velocidad;
 
 
-    public Coche() {
+    public Auto() {
         this.marca = "Volkswagen";
         this.modelo = "Nivus";
         this.color = "blanco";
         this.velocidad= 0;
     }
-    public Coche(String marca, String modelo, String color, int velocidad) {
+    public Auto(String marca, String modelo, String color, int velocidad) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
