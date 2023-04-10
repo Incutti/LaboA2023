@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -98,5 +97,18 @@ public class Main {
         Materia materia2=new Materia();
         Alumno alumno=new Alumno();
     */
+        Empleado E1=new Empleado("manuel");
+        Directivo D1 =new Directivo("Martin");
+        Operario O1 =new Operario("Mario");
+        Oficial OF =new Oficial("Marin");
+        Tecnico T1 =new Tecnico("Pablo");
+
+
+        System.out.println(E1);
+        System.out.println(D1);
+        System.out.println(O1);
+        System.out.println(OF);
+        System.out.println(T1);
+
     }
 }
