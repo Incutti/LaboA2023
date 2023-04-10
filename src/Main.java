@@ -8,7 +8,7 @@ public class Main {
         // UNIDAD 1
         /*
         Objetos.Libro libro1=new Objetos.Libro();
-        Objetos.Libro libro=new Objetos.Libro("cualquier cosa",new Humanos.Persona(),122341,124124,"string",new Fecha(12,12,2012));
+        Objetos.Libro libro=new Objetos.Libro("cualquier cosa",new Humanos.Persona(),122341,124124,"string",new tiempo.Fecha(12,12,2012));
         libro.mostrarInfo();
         libro.libroAnterior(libro1);
         // ------
