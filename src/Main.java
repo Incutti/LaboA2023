@@ -95,8 +95,8 @@ public class Main {
 
 
         // EJERCICIO 6
-        Materia materia=new Materia();
-        Materia materia2=new Materia();
+        Cosas.Materia materia=new Cosas.Materia();
+        Cosas.Materia materia2=new Cosas.Materia();
         Humanos.Alumno alumno=new Humanos.Alumno();
     */
         Empleado E1=new Empleado("manuel");

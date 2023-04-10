@@ -1,15 +1,25 @@
 package Humanos;
-
+import Cosas.*;
 import java.util.ArrayList;
 
 public class Alumno extends Persona {
 
     private ArrayList<Materia> listaDeMaterias;
+    private String division;
 
     public Alumno(){
         super();
         listaDeMaterias= new ArrayList<Materia>();
+        division="3CSTCA";
 
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
     }
 
     public ArrayList<Materia> getListaDeMaterias(){
