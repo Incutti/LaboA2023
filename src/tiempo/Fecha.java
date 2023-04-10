@@ -1,3 +1,4 @@
+package src
 public class Fecha {
     private int dia;
     private int mes;
