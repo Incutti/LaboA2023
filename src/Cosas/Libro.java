@@ -1,6 +1,7 @@
 package Cosas;
 
 import Humanos.Persona;
+import tiempo.*;
 
 public class Libro {
     private String titulo;
@@ -84,7 +85,7 @@ public class Libro {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    void mostrarInfo(){
+    public void mostrarInfo(){
         System.out.println("El libro se llama " + titulo + " y es de la editorial " + editorial);
         System.out.print("El libro fue escrito por ");
         autor.impresionDeHumanos();
@@ -94,7 +95,7 @@ public class Libro {
         fechaPublicacion.corta();
     }
 
-    void libroAnterior(Libro libro1){
+    public void libroAnterior(Libro libro1){
         this.fechaPublicacion.menorQue(libro1.getFechaPublicacion());
     }
 }
