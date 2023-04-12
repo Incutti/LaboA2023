@@ -1,3 +1,4 @@
+import Cosas.Menu;
 import Humanos.*;
 
 import java.util.Scanner;
@@ -98,7 +99,7 @@ public class Main {
         Cosas.Materia materia=new Cosas.Materia();
         Cosas.Materia materia2=new Cosas.Materia();
         Humanos.Alumno alumno=new Humanos.Alumno();
-    */
+
         Empleado E1=new Empleado("manuel");
         Directivo D1 =new Directivo("Martin");
         Operario O1 =new Operario("Mario");
@@ -111,6 +112,8 @@ public class Main {
         System.out.println(O1);
         System.out.println(OF);
         System.out.println(T1);
-
+*/
+        Menu menu=new Menu();
+        menu.mostrarMenu();
     }
 }

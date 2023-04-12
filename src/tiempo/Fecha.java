@@ -41,7 +41,7 @@ public class Fecha {
         this.anio = anio;
     }
 
-    void valida(){
+    public void valida(){
             if (mes == 1 || mes== 3||mes== 5||mes== 7||mes== 8||mes== 10||mes== 12) {
                     if (dia < 1 || dia > 31) {
                         dia = 1;
@@ -62,7 +62,7 @@ public class Fecha {
             anio=1900;
         }
     }
-    int diasMes(int mes){
+    public int diasMes(int mes){
         int cantDias;
         if (mes == 1 || mes== 3||mes== 5||mes== 7||mes== 8||mes== 10||mes== 12) {
             cantDias=31;
@@ -73,11 +73,11 @@ public class Fecha {
         }
         return cantDias;
     }
-    void corta(){
+    public void corta(){
         valida();
         System.out.println(dia + "-" + mes + "-" + anio);
     }
-    void larga(){
+    public void larga(){
         valida();
         String mesLetra ;
          switch (mes) {
@@ -121,7 +121,7 @@ public class Fecha {
         System.out.println(dia + " de " + mesLetra + " de " + anio);
     }
 
-    void siguiente(){
+    public void siguiente(){
         valida();
         int cantDias;
         cantDias = diasMes(mes);
@@ -138,7 +138,7 @@ public class Fecha {
             dia++;
         }
     }
-    void anterior(){
+    public void anterior(){
         valida();
         int cantDias=diasMes(mes);
         if(dia==1){
@@ -155,7 +155,7 @@ public class Fecha {
             dia--;
         }
     }
-    void igualQue(Fecha fecha){
+    public void igualQue(Fecha fecha){
         valida();
         int anio1 = fecha.anio;
         int mes1  = fecha.mes;
@@ -163,7 +163,7 @@ public class Fecha {
         if(anio == anio1 && mes == mes1 && dia == dia1) System.out.println("Las fechas son iguales");
         else System.out.println("Las fechas no son iguales");
     }
-    void menorQue(Fecha fecha){
+    public void menorQue(Fecha fecha){
         valida();
         int anio1 = fecha.anio;
         int mes1  = fecha.mes;
@@ -173,7 +173,7 @@ public class Fecha {
         else if (anio1 == anio && mes == mes1 && dia < dia1) System.out.println("La fecha es menor");
         else System.out.println("La fecha no es menor");
     }
-    void mayorQue(Fecha fecha){
+    public void mayorQue(Fecha fecha){
         valida();
         int anio1 = fecha.anio;
         int mes1  = fecha.mes;
