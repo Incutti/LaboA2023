@@ -4,19 +4,18 @@ import java.util.ArrayList;
 
 public class Empresa {
     private String nombre;
-    private ArrayList<Auto> listaAutos;
-    private ArrayList<Camioneta> listaCamionetas;
+    private ArrayList<Vehiculo> listaVehiculos;
 
     public Empresa(){
         nombre="SaulGoddamn";
-        listaAutos = new ArrayList<Auto>();
-        listaCamionetas = new ArrayList<Camioneta>();
+        listaVehiculos=new ArrayList<Vehiculo>();
     }
-    public Empresa(String nombre, ArrayList<Auto> listaAutos, ArrayList<Camioneta> listaCamionetas) {
+
+    public Empresa(String nombre, ArrayList<Vehiculo> listaVehiculos) {
         this.nombre = nombre;
-        this.listaAutos = listaAutos;
-        this.listaCamionetas = listaCamionetas;
+        this.listaVehiculos = listaVehiculos;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -26,39 +25,47 @@ public class Empresa {
         this.nombre = nombre;
     }
 
-    public ArrayList<Auto> getListaAutos() {
-        return listaAutos;
+    public ArrayList<Vehiculo> getListaVehiculos() {
+        return listaVehiculos;
     }
 
-    public void setListaAutos(ArrayList<Auto> listaAutos) {
-        this.listaAutos = listaAutos;
-    }
-
-    public ArrayList<Camioneta> getListaCamionetas() {
-        return listaCamionetas;
-    }
-
-    public void setListaCamionetas(ArrayList<Camioneta> listaCamionetas) {
-        this.listaCamionetas = listaCamionetas;
+    public void setListaVehiculos(ArrayList<Vehiculo> listaVehiculos) {
+        this.listaVehiculos = listaVehiculos;
     }
 
     public void CualTieneMas(){
-        if(listaAutos.size()<listaCamionetas.size()){
-            System.out.println("Hay mas camionetas");
-        } else if (listaAutos.size()>listaCamionetas.size()){
-            System.out.println("Hay mas autos");
-        } else {
-            System.out.println("Hay la misma cantidad de autos que de camionetas");
+        int contadorAutos=0, contadorCamionetas=0, contadorBicis=0;
+        for(Vehiculo vehiculo:listaVehiculos) {
+            if (vehiculo.getClass().getName().equals("Auto")){
+                contadorAutos++;
+            } else if (vehiculo.getClass().getName().equals("Camioneta")){
+                contadorCamionetas++;
+            } else if (vehiculo.getClass().getName().equals("Bicicleta")){
+                contadorBicis++;
+            }
+
         }
+            if (contadorAutos < contadorCamionetas && contadorBicis < contadorCamionetas) {
+                System.out.println("Hay mas camionetas");
+            } else if (contadorAutos > contadorCamionetas && contadorAutos > contadorBicis) {
+                System.out.println("Hay mas autos");
+            } else {
+                System.out.println("Hay la misma cantidad de autos que de camionetas");
+            }
+
     }
 
     public void porcentajeAutosDescapotables(){
         int contador=0;
-        for(Auto auto : listaAutos){
-            if(auto.isDescapotable()){
-                contador++;
+        int contadorAuto=0;
+        for (Vehiculo vehiculo: listaVehiculos) {
+            if (vehiculo.getClass().getName().equals("Auto")){
+                contadorAuto++;
+                if (((Auto)vehiculo).isDescapotable()) {
+                    contador++;
+                }
             }
         }
-        System.out.println("Su empresa cuenta con el " + (contador*100)/listaAutos.size() + "% de autos descapotables");
+        System.out.println("Su empresa cuenta con el " + (contador*100)/contadorAuto + "% de autos descapotables");
     }
 }
