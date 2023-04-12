@@ -59,7 +59,7 @@ public class Empresa {
         int contador=0;
         int contadorAuto=0;
         for (Vehiculo vehiculo: listaVehiculos) {
-            if (vehiculo.getClass().getName().equals("Auto")){
+            if (vehiculo instanceof Auto){
                 contadorAuto++;
                 if (((Auto)vehiculo).isDescapotable()) {
                     contador++;
