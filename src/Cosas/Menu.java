@@ -29,7 +29,7 @@ public class Menu {
     public void setListaPedidos(ArrayList<Pedido> listaPedidos) {
         this.listaPedidos = listaPedidos;
     }
-    
+
     public void mostrarMenu() {
 
         Scanner entrada = new Scanner(System.in);
