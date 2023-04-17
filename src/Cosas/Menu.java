@@ -1,4 +1,7 @@
 package Cosas;
+import Humanos.Profesor;
+import tiempo.Fecha;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -121,8 +124,19 @@ public class Menu {
     public void modificarPedido(Pedido pedidoModificar,Pedido pedidoModificado){
         for(Pedido pedido:listaPedidos) {
             if (pedidoModificar == pedido){
-                // listaPedidos.set(pedidoModificar);
                 pedido=pedidoModificado;
+            }
+        }
+    }
+    public void platosDelDia(Fecha hoy){
+        for(Pedido pedido:listaPedidos){
+            if(pedido.getFechaDeCreacion()==hoy){
+                System.out.print(pedido.getPlatoPedido().getNombre() + ", ");
+                if(pedido.getCliente() instanceof Profesor){
+                    System.out.println(pedido.getPlatoPedido().getPrecio()-(pedido.getPlatoPedido().getPrecio()*100)/10 + "(suponiendo que el descuento es 10)" /* pedido.getCliente().getDescuento()*/);
+                } else {
+                    System.out.println(pedido.getPlatoPedido().getPrecio());
+                }
             }
         }
     }
