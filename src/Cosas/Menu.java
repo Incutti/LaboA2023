@@ -9,12 +9,9 @@ import java.util.Scanner;
 public class Menu {
     private ArrayList<Plato> listaPlatos ;
     private ArrayList<Pedido> listaPedidos;
-    private ArrayList<Pedido> platosACocinar;
-
     public Menu(){
         listaPlatos=new ArrayList<Plato>();
         listaPedidos=new ArrayList<Pedido>();
-        platosACocinar=new ArrayList<Pedido>();
     }
 
     public ArrayList<Plato> getListaPlatos() {
@@ -32,15 +29,7 @@ public class Menu {
     public void setListaPedidos(ArrayList<Pedido> listaPedidos) {
         this.listaPedidos = listaPedidos;
     }
-
-    public ArrayList<Pedido> getPlatosACocinar() {
-        return platosACocinar;
-    }
-
-    public void setPlatosACocinar(ArrayList<Pedido> platosACocinar) {
-        this.platosACocinar = platosACocinar;
-    }
-
+    
     public void mostrarMenu() {
 
         Scanner entrada = new Scanner(System.in);
