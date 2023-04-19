@@ -19,6 +19,12 @@ public class Periferico extends Componente{
         this.puertosValidos = puertosValidos;
         this.entrada = entrada;
     }
+    public Periferico(Boolean entrada){
+        super();
+        conector="USB 2.0";
+        puertosValidos=new ArrayList<String>();
+        this.entrada=entrada;
+    }
 
     public String getConector() {
         return conector;
