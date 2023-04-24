@@ -105,31 +105,20 @@ public class Orden {
         componentes.remove(componente);
     }
     public boolean validacionOrden(Sistema sistema){
-        boolean sirve=false;
-        boolean CPU=false;
-        boolean entrada=false;
-        boolean salida=false;
-
+        boolean sirve=false, CPU=false, entrada=false, salida=false;
         for(Componente componente:componentes){
             for(Componente elemStock: sistema.getStock()){
                 if(elemStock==componente){
-                    if(componente instanceof CPU){
-                        CPU=true;
-                    }else if(componente instanceof Periferico && ((Periferico) componente).getEntrada()){
-                        entrada=true;
-                    }else if(componente instanceof Periferico && !((Periferico) componente).getEntrada()){
-                        salida=true;
-                    }
+                    if(componente instanceof CPU){ CPU=true; }
+                    else if(componente instanceof Periferico && ((Periferico) componente).getEntrada()){ entrada=true; }
+                    else if(componente instanceof Periferico && !((Periferico) componente).getEntrada()){ salida=true; }
                 }
-
             }
-
         }
-        if(CPU && entrada && salida){
-            sirve=true;
-        }
+        if(CPU && entrada && salida){ sirve=true; }
         return sirve;
     }
+
     public void cantidadComponentes(){
         int cantEntrada=0;
         int cantSalida=0;
