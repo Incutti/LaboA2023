@@ -57,5 +57,12 @@ public class Sensor {
         this.anioAdquisicion = anioAdquisicion;
     }
 
-
+    public void verificar(){
+        if(isEstado()&&valor>umbral){
+            alarma();
+        }
+    }
+    public void alarma(){
+        System.out.println("alarma");
+    }
 }
