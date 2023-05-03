@@ -7,6 +7,9 @@ public class Persona {
     private int edad;
     private Fecha fechaNacimiento;
     private String direccion;
+    private int DNI;
+    private int numTelefono;
+    private String pais;
 
     public Persona() {
         nombre = "Pablo";
@@ -14,6 +17,9 @@ public class Persona {
         edad = 2023-fechaNacimiento.getAnio();
         fechaNacimiento = new Fecha();
         direccion = "Cabildo 5000";
+        DNI = 45456678;
+        numTelefono=1133445566;
+        pais = "bolivia";
     }
     public Persona(String nombre, String apellido, String direccion, Fecha fechaNacimiento) {
         this.nombre = nombre;
@@ -33,7 +39,13 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
     }
-
+    public Persona (String nombre, String apellido, int DNI, int numTelefono, String pais){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.DNI=DNI;
+        this.numTelefono=numTelefono;
+        this.pais=pais;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -72,6 +84,30 @@ public class Persona {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public int getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
+
+    public int getNumTelefono() {
+        return numTelefono;
+    }
+
+    public void setNumTelefono(int numTelefono) {
+        this.numTelefono = numTelefono;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public void impresionDeHumanos(){
