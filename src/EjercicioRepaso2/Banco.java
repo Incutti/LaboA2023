@@ -34,5 +34,16 @@ public class Banco {
         return clienteMasJoven;
     }
 
-
+    public void masTransferenciasCheque(){
+        int cbu=0, mayor=0;
+        for(CuentaBancaria cuenta : listaCuentas){
+            if(cuenta instanceof CuentaCorriente){
+                if( ((CuentaCorriente) cuenta).getListaCheques().size()>mayor){
+                    mayor=((CuentaCorriente)cuenta).getListaCheques().size();
+                    cbu=cuenta.getCbu();
+                }
+            }
+        }
+        System.out.println("El cliente cuyo cbu es " + cbu + ", es el que más transeferencias (" + mayor + ") ha hecho por medio de cheques ");
+    }
 }
