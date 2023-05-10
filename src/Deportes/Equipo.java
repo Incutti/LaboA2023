@@ -1,5 +1,6 @@
 package Deportes;
 
+import Enums.Turno;
 import Humanos.Jugador;
 
 import java.util.ArrayList;
@@ -10,18 +11,18 @@ public class Equipo {
     private ArrayList<Jugador> jugadores;
     private int numCapitan;
     private ArrayList<Boolean> diaDisponible;
-    private String horaDisponible;
+    private Turno horaDisponible;
 
     public Equipo(){
         nombreEquipo="El matador";
         barrioProcedencia="no tiene";
         jugadores=new ArrayList<Jugador>(10);
         numCapitan=1;
-        horaDisponible="mañana";
+        horaDisponible=Turno.MANIANA;
         diaDisponible=new ArrayList<Boolean>(6);
     }
 
-    public Equipo(String nombreEquipo, String barrioProcedencia, ArrayList<Jugador> integrantes, int numCapitan, String horaDisponible, ArrayList<Boolean> diaDisponible) {
+    public Equipo(String nombreEquipo, String barrioProcedencia, ArrayList<Jugador> integrantes, int numCapitan, Turno horaDisponible, ArrayList<Boolean> diaDisponible) {
         this.nombreEquipo = nombreEquipo;
         this.barrioProcedencia = barrioProcedencia;
         this.jugadores = integrantes;
@@ -70,11 +71,11 @@ public class Equipo {
         this.diaDisponible = diaDisponible;
     }
 
-    public String getHoraDisponible() {
+    public Turno getHoraDisponible() {
         return horaDisponible;
     }
 
-    public void setHoraDisponible(String horaDisponible) {
+    public void setHoraDisponible(Turno horaDisponible) {
         this.horaDisponible = horaDisponible;
     }
 

@@ -1,16 +1,20 @@
 package Deportes;
 
+import Enums.Semana;
+import Enums.Turno;
 import Humanos.Jugador;
 
 import java.util.ArrayList;
 
+import static Enums.Semana.LUNES;
+
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
-    private String dia;
-    private String hora;
+    private Semana dia;
+    private Turno hora;
 
-    public Partido(Equipo equipo1, Equipo equipo2, String dia, String hora) {
+    public Partido(Equipo equipo1, Equipo equipo2, Semana dia, Turno hora) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.dia = dia;
@@ -19,9 +23,9 @@ public class Partido {
 
     public Partido() {
         equipo1 = new Equipo();
-        equipo2 = new Equipo("Chanchos","Villa Urquiza", new ArrayList<Jugador>(), 2, "mañana",new ArrayList<Boolean>() );
-        dia = "lunes";
-        hora = "mañana";
+        equipo2 = new Equipo("Chanchos","Villa Urquiza", new ArrayList<Jugador>(), 2, Turno.MANIANA,new ArrayList<Boolean>() );
+        dia = Semana.LUNES;
+        hora = Turno.MANIANA;
     }
 
     public Partido(Equipo equipo1, Equipo equipo2){
@@ -30,36 +34,36 @@ public class Partido {
                 if (equipo1.getDiaDisponible().get(i) ==equipo2.getDiaDisponible().get(i)){
                     switch (i){
                         case 1:
-                            dia="Lunes";
+                            dia = Semana.LUNES;
                             break;
 
                         case 2:
-                            dia="Martes";
+                            dia = Semana.MARTES;
                             break;
 
                         case 3:
-                            dia="Miercoles";
+                            dia = Semana.MIERCOLES;
                             break;
 
                         case 4:
-                            dia="Jueves";
+                            dia = Semana.JUEVES;
                             break;
 
                         case 5:
-                            dia="Viernes";
+                            dia = Semana.VIERNES;
                             break;
                         default:
-                            dia="Sabado";
+                            dia = Semana.SABADO;
                             break;
                     }
-                }else{ dia="Sabado"; }
+                }else{ dia = Semana.SABADO; }
             }
-            if(equipo1.getHoraDisponible().equals("mañana")){
-                hora = "mañana";
-            } else if (equipo1.getHoraDisponible().equals("tarde")) {
-                hora = "tarde";
-            } else if(equipo1.getHoraDisponible().equals("noche")) {
-                hora = "noche";
+            if(equipo1.getHoraDisponible().equals(Turno.MANIANA)){
+                hora = Turno.MANIANA;
+            } else if (equipo1.getHoraDisponible().equals(Turno.TARDE)) {
+                hora = Turno.TARDE;
+            } else if(equipo1.getHoraDisponible().equals(Turno.NOCHE)) {
+                hora = Turno.NOCHE;
             }
         }
     }
@@ -80,19 +84,19 @@ public class Partido {
         this.equipo2 = equipo2;
     }
 
-    public String getDia() {
+    public Semana getDia() {
         return dia;
     }
 
-    public void setDia(String dia) {
+    public void setDia(Semana dia) {
         this.dia = dia;
     }
 
-    public String getHora() {
+    public Turno getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
+    public void setHora(Turno hora) {
         this.hora = hora;
     }
 }
