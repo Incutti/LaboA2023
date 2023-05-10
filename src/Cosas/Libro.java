@@ -2,13 +2,14 @@ package Cosas;
 
 import Humanos.Persona;
 import tiempo.*;
+import Enums.*;
 
 public class Libro {
     private String titulo;
     private Persona autor;
     private int isbn;
     private int cantPaginas;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fechaPublicacion;
 
     public Libro() {
@@ -16,7 +17,7 @@ public class Libro {
         autor = new Persona();
         isbn = 342387635;
         cantPaginas = 395;
-        editorial = "AdiWillSchreiben";
+        editorial = Editorial.SUR;
         fechaPublicacion = new Fecha();
     }
 
@@ -28,7 +29,7 @@ public class Libro {
 
     }
 
-    public Libro(String titulo, Persona autor, int isbn, int cantPaginas, String editorial, Fecha fechaPublicacion) {
+    public Libro(String titulo, Persona autor, int isbn, int cantPaginas, Fecha fechaPublicacion, Editorial editorial) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -69,12 +70,8 @@ public class Libro {
         this.cantPaginas = cantPaginas;
     }
 
-    public String getEditorial() {
+    public Editorial getEditorial() {
         return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
     }
 
     public Fecha getFechaPublicacion() {
@@ -86,7 +83,7 @@ public class Libro {
     }
 
     public void mostrarInfo(){
-        System.out.println("El libro se llama " + titulo + " y es de la editorial " + editorial);
+        System.out.println("El libro se llama " + titulo + " y es de la editorial " + editorial.name());
         System.out.print("El libro fue escrito por ");
         autor.impresionDeHumanos();
         System.out.println("EL ISBN es: " + isbn);
