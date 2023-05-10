@@ -83,7 +83,7 @@ public class Libro {
     }
 
     public void mostrarInfo(){
-        System.out.println("El libro se llama " + titulo + " y es de la editorial " + editorial.name());
+        System.out.println("El libro se llama " + titulo + " y es de la editorial " + editorial);
         System.out.print("El libro fue escrito por ");
         autor.impresionDeHumanos();
         System.out.println("EL ISBN es: " + isbn);

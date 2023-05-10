@@ -4,6 +4,7 @@ import tiempo.Fecha;
 public class Persona {
     private String nombre;
     private String apellido;
+    private int dni;
     private int edad;
     private Fecha fechaNacimiento;
     private String direccion;
@@ -14,6 +15,7 @@ public class Persona {
     public Persona() {
         nombre = "Pablo";
         apellido = "Crisnoselacome";
+        dni = 30525666;
         edad = 2023-fechaNacimiento.getAnio();
         fechaNacimiento = new Fecha();
         direccion = "Cabildo 5000";
@@ -39,6 +41,7 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
     }
+<<<<<<< HEAD
     public Persona (String nombre, String apellido, int DNI, int numTelefono, String pais){
         this.nombre=nombre;
         this.apellido=apellido;
@@ -46,6 +49,18 @@ public class Persona {
         this.numTelefono=numTelefono;
         this.pais=pais;
     }
+=======
+
+    public Persona(String nombre, String apellido, int dni, int edad, Fecha fechaNacimiento, String direccion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
+        this.direccion = direccion;
+    }
+
+>>>>>>> 97861bc3b8f22db0407abc10a5ca2baa036c769b
     public String getNombre() {
         return nombre;
     }
