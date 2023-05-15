@@ -1,14 +1,16 @@
 package EjercicioRepaso1;
 
+import Enums.TecnologiaPantalla;
+
 public class Televisor extends SeccionMultimedia{
-    private String tecnologiaUtilizada;
+    private TecnologiaPantalla tecnologiaUtilizada;
     private int pixelesAlto;
     private int pixelesAncho;
 
-    public String getTecnologiaUtilizada(){
+    public TecnologiaPantalla getTecnologiaUtilizada(){
         return tecnologiaUtilizada;
     }
-    public void setTecnologiaUtilizada(String tecnologiaUtilizada ){
+    public void setTecnologiaUtilizada(TecnologiaPantalla tecnologiaUtilizada ){
         this.tecnologiaUtilizada=tecnologiaUtilizada;
     }
 
@@ -29,12 +31,12 @@ public class Televisor extends SeccionMultimedia{
     }
     public Televisor(){
         super();
-        tecnologiaUtilizada="FullHD";
+        tecnologiaUtilizada=TecnologiaPantalla.FULLHD;
         pixelesAlto=1080;
         pixelesAncho=1920;
     }
 
-    public Televisor(String nombre, double precio, int stock, String tecnologiaUtilizada, int pixelesAlto, int pixelesAncho) {
+    public Televisor(String nombre, double precio, int stock, TecnologiaPantalla tecnologiaUtilizada, int pixelesAlto, int pixelesAncho) {
         super(nombre, precio, stock);
         this.tecnologiaUtilizada = tecnologiaUtilizada;
         this.pixelesAlto = pixelesAlto;
