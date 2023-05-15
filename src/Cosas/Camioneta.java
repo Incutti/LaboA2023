@@ -1,5 +1,7 @@
 package Cosas;
 
+import Enums.Color;
+
 public class Camioneta extends Vehiculo{
     private String patente;
     private int capacidadCargaEnKG;
@@ -11,7 +13,7 @@ public class Camioneta extends Vehiculo{
         capacidadCargaEnKG=3;
         cargaActualEnKG=0;
     }
-    public Camioneta(String marca, String modelo, String color, String patente, int capacidadCargaEnKG, int cargaActualEnKG){
+    public Camioneta(String marca, String modelo, Color color, String patente, int capacidadCargaEnKG, int cargaActualEnKG){
         super(marca, modelo, color);
         this.patente=patente;
         this.capacidadCargaEnKG=capacidadCargaEnKG;

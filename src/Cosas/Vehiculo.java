@@ -1,24 +1,27 @@
 package Cosas;
 
+import Enums.Color;
+
 public class Vehiculo {
-    private String marca, modelo, color;
+    private String marca, modelo;
+    private Color color;
     private int cantidadRuedas , anioFabricacion;
 
     public Vehiculo (){
         marca="Mercedes";
         modelo="AMG1";
-        color="rojo";
+        color=Color.ROJO;
         cantidadRuedas=4;
         anioFabricacion=2021;
     }
-    public Vehiculo(String marca, String modelo, String color, int cantidadRuedas, int anioFabricacion) {
+    public Vehiculo(String marca, String modelo, Color color, int cantidadRuedas, int anioFabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
         this.cantidadRuedas = cantidadRuedas;
         this.anioFabricacion = anioFabricacion;
     }
-    public Vehiculo(String marca, String modelo, String color){
+    public Vehiculo(String marca, String modelo, Color color){
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -40,11 +43,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

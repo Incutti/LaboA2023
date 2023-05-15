@@ -1,15 +1,17 @@
 package Cosas;
 
+import Enums.Color;
+
 public class Taza {
     private int cantMaxima;
     private int cantActual;
-    private String color;
+    private Color color;
     private String material;
 
     public Taza() {
         cantMaxima = 250;
         cantActual = 0;
-        color = "blanca";
+        color = color.BLANCO;
         material = "porcelana";
     }
     public Taza(int cantMaxima, int cantActual) {
