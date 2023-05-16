@@ -1,0 +1,122 @@
+1.Contar la cantidad de operaciones elementales que realizan los siguientes programas.
+
+int ultimo1 (vector v) {
+    return v[ v.size() -1 ];
+}
+RESPUESTA: Hay 4 operaciones elementales
+
+
+int ultimo2 (vector v) {
+    int i = v.size();
+    return v[ i -1 ];
+}
+RESPUESTA: Hay 2 operaciones elementales
+
+
+int ultimo3 (vector v) {
+    int i = 0;
+    while ( i < v.size() ) {
+        i ++;
+    }
+    return v[ i -1 ];
+}
+RESPUESTA: Hay n*(4)+4 operaciones elementales
+
+----------------------------------------------------------------------
+
+2. Calcular el tiempo de ejecución de peor caso (en notación O grande) de los siguientes programas con respecto
+   al tamaño de los secuencias de entrada. Recordar que tanto la lectura como la escritura de un elemento en un
+   vector tiene tiempo de ejecución perteneciente a O(1).
+
+void f1 (vector &vec) {
+    i = vec.size() / 2;
+    while ( i >= 0 ){
+        vec [ vec.size () / 2 -i ] = i;
+        vec [ vec.size () / 2 + i ] = i;
+        i --;
+    }
+}
+RESPUESTA: O(n)
+
+
+void f2 (vector &vec) {
+    i = 0;
+    while( i < 10000){
+        vec [ vec.size() / 2 -i ] = i ;
+        vec [ vec.size() / 2 + i ] = i ;
+        i ++;
+    }
+}
+RESPUESTA: O(1)
+
+
+int f3 (vector &v1, int e) {
+    int i = 0;
+    while ( v1[ i ] != e ){
+        i ++;
+    }
+    return i;
+}
+RESPUESTA: O(n)
+
+
+void f4 (vector &vec) {
+    int rec = 0;
+    int max_iter = 1000;
+    if (max_iter > vec.size()) {
+        max_iter = vec . size ();
+    }
+    for (int i =0; i < max_iter; i++) {
+        for(int j =0; j < max_iter ; j++) {
+            res += vec [ i ] * vec [ j ];
+        }
+    }
+}
+RESPUESTA: O(n²)
+
+
+void f5 (vector &v1 , vector &v2) {
+    vector res ();
+    for (int i =0; i < v1 . size (); i ++){
+        res.push_back (v1[ i ]); // O(1)
+    }
+    for (int i =0; i < v2 . size (); i ++){
+        res.push_back (v2[ i ]); // O(1)
+    }
+    return res ;
+}
+RESPUESTA: O(n)
+
+----------------------------------------------------------------------
+
+3.
+int mesetaMasLarga (vector &v) {
+    int i = 0;
+    int maxMeseta = 0;
+    int meseta ;
+    while ( i < v.size () ) {
+        int j = i + 1;
+        while ( j < v.size () && v [ i ] == v [ j ]) {   // q la sgte sea igual y q exista sgte
+            j ++;
+        }
+        meseta = j -i ;    // lo q dura
+        i = j ;
+        if ( meseta > maxMeseta ) {
+            maxMeseta = meseta ; // actualiza meseta mas grande
+        }
+    }
+    return maxMeseta ;
+ }
+
+
+/*
+a)¿Qué hace este programa?
+ Este programa devuelve la meseta mayor.
+
+b)Calcular el tiempo de ejecución de peor caso de este programa en función del tamaño del vector.
+ En el peor caso el tiempo es de O(n²)
+
+
+c)¿Es posible escribir otro programa que resuelva el problema utilizando solo un ciclo?
+ Si, es posible.
+*/

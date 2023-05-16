@@ -1,6 +1,7 @@
 import Cosas.Menu;
 import Humanos.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -112,8 +113,10 @@ public class Main {
         System.out.println(O1);
         System.out.println(OF);
         System.out.println(T1);
-*/
+
         Menu menu=new Menu();
         menu.mostrarMenu();
+*/
+
     }
 }
