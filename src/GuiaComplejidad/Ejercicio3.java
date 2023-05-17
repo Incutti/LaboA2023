@@ -14,28 +14,25 @@ public class Ejercicio3 {
         this.listaMesetas = listaMesetas;
     }
 
+    
     public Ejercicio3() {
-        listaMesetas = new ArrayList<>();
+        listaMesetas = new ArrayList<Integer>();
     }
-
-
-
+    
     public int mesetaMasLarga () {
         int i = 0;
         int maxMeseta = 0;
-        int meseta;
-        int anterior=0;
         int contador=0;
         while ( i < listaMesetas.size () ) {
-            int j = i + 1;
-            anterior=i-1;
-            if(j< listaMesetas.size() && listaMesetas.get(i).equals(listaMesetas.get(j))){ // q la sgte sea igual y q exista sgte
+            int siguiente = i + 1;
+            if(siguiente< listaMesetas.size() && listaMesetas.get(i).equals(listaMesetas.get(siguiente))){
                 contador++;
             }
-            meseta = j-i; // lo q dura
-            i = j;
-            if (meseta>maxMeseta){
-                maxMeseta = meseta; // actualiza meseta mas grande
+            if (contador>maxMeseta){
+                maxMeseta = contador;
+            }
+            if(!listaMesetas.get(siguiente).equals(listaMesetas.get(i))){
+                contador=0;
             }
         }
         return maxMeseta;

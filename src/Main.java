@@ -1,4 +1,5 @@
 import Cosas.Menu;
+import GuiaComplejidad.Ejercicio3;
 import Humanos.*;
 
 import java.util.ArrayList;
@@ -116,7 +117,38 @@ public class Main {
 
         Menu menu=new Menu();
         menu.mostrarMenu();
-*/
 
+
+
+// EJERCICIO 3 de guia complejidad
+*/
+        ArrayList<Integer> listaMesetas= new ArrayList<Integer>();
+        listaMesetas.add(1);
+        listaMesetas.add(1);
+        listaMesetas.add(2);
+        listaMesetas.add(2);
+        listaMesetas.add(2);
+        listaMesetas.add(4);
+        listaMesetas.add(3);
+
+        int i = 0;
+        int maxMeseta = 0;
+        int contador=1;
+        while ( i < listaMesetas.size () ) {
+            int siguiente = i + 1;
+
+            if(siguiente< listaMesetas.size()){
+                if(listaMesetas.get(i).equals(listaMesetas.get(siguiente))){
+                    contador++;
+                } else{
+                    if (contador>maxMeseta){
+                        maxMeseta = contador;
+                    }
+                    contador=1;
+                }
+            }
+            i++;
+        }
+        System.out.println(maxMeseta);
     }
 }
