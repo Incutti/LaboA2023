@@ -41,7 +41,6 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
     }
-<<<<<<< HEAD
     public Persona (String nombre, String apellido, int DNI, int numTelefono, String pais){
         this.nombre=nombre;
         this.apellido=apellido;
@@ -49,7 +48,7 @@ public class Persona {
         this.numTelefono=numTelefono;
         this.pais=pais;
     }
-=======
+
 
     public Persona(String nombre, String apellido, int dni, int edad, Fecha fechaNacimiento, String direccion) {
         this.nombre = nombre;
@@ -60,7 +59,7 @@ public class Persona {
         this.direccion = direccion;
     }
 
->>>>>>> 97861bc3b8f22db0407abc10a5ca2baa036c769b
+
     public String getNombre() {
         return nombre;
     }
