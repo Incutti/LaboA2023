@@ -152,8 +152,8 @@ public class Main {
         System.out.println(maxMeseta);
 
 
-// EJERCICIO 6 de guia de complejidad
-        */
+// EJERCICIO 6 de la guia de complejidad
+
 
         ArrayList<Integer> listaEnteros= new ArrayList<Integer>();
         listaEnteros.add(2);
@@ -175,9 +175,9 @@ public class Main {
                 }
                 if(listaEnteros.get(i).equals(listaEnteros.get(siguiente)) && listaEnteros.get(i)%2 !=0){
                     contador++;
-                     /*else if (contador==1){
+                     else if (contador==1){
                         contador++;
-                    } */
+                    }
 
                 } else{
                     if (contador>maxMeseta){
@@ -190,5 +190,18 @@ public class Main {
             i++;
         }
         System.out.println(maxMeseta);
+
+// EJERCICIO 7 A de la guia de complejidad
+        */
+
+        ArrayList<Boolean>columna = new ArrayList<Boolean>();
+        ArrayList<ArrayList<Boolean>> matrizBooleana= new ArrayList<ArrayList<Boolean>>();
+
+        columna.add(true);
+        columna.add(false);
+        columna.add(false);
+        columna.add(true);
+        columna.add(true);
+        matrizBooleana.add(columna);
     }
 }
