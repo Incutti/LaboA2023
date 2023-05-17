@@ -121,7 +121,7 @@ public class Main {
 
 
 // EJERCICIO 3 de guia complejidad
-*/
+
         ArrayList<Integer> listaMesetas= new ArrayList<Integer>();
         listaMesetas.add(1);
         listaMesetas.add(1);
@@ -145,6 +145,46 @@ public class Main {
                         maxMeseta = contador;
                     }
                     contador=1;
+                }
+            }
+            i++;
+        }
+        System.out.println(maxMeseta);
+
+
+// EJERCICIO 6 de guia de complejidad
+        */
+
+        ArrayList<Integer> listaEnteros= new ArrayList<Integer>();
+        listaEnteros.add(2);
+        listaEnteros.add(6);
+        listaEnteros.add(4);
+        listaEnteros.add(2);
+        listaEnteros.add(2);
+        listaEnteros.add(4);
+        listaEnteros.add(2);
+
+        int i = 0;
+        int maxMeseta = 0;
+        int contador=0;
+        while ( i < listaEnteros.size () ) {
+            int siguiente = i + 1;
+            if(siguiente< listaEnteros.size()){
+                if(contador==0 && listaEnteros.get(i)%2!=0){
+                    contador++;
+                }
+                if(listaEnteros.get(i).equals(listaEnteros.get(siguiente)) && listaEnteros.get(i)%2 !=0){
+                    contador++;
+                     /*else if (contador==1){
+                        contador++;
+                    } */
+
+                } else{
+                    if (contador>maxMeseta){
+                        maxMeseta = contador;
+
+                    }
+                    contador=0;
                 }
             }
             i++;
