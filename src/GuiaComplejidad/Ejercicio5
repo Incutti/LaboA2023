@@ -10,4 +10,4 @@ int sumarPotenciaHasta (int n) {
 
 ¿Qué tiempo de ejecución de peor caso tiene el programa en función del valor n?
 
-RESPUESTA: log2(n) y si queda valor con coma redondeo para arriba.
+RESPUESTA: log2(n) y si queda valor con coma redondeo para arriba. El peor caso se expresa como O(log2 n) porque: O(1 + log2 n + 1) = O(2 + log2 n) = O(log2 n)
