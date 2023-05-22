@@ -10,4 +10,4 @@ int sumarPotenciaHasta (int n) {
 
 ¿Qué tiempo de ejecución de peor caso tiene el programa en función del valor n?
 
-RESPUESTA: O(n)
+RESPUESTA: log2(n) y si queda valor con coma redondeo para arriba.
