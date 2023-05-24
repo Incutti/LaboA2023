@@ -192,7 +192,7 @@ public class Main {
         System.out.println(maxMeseta);
 
 // EJERCICIO 7 A de la guia de complejidad
-        */
+
 
         ArrayList<Boolean>columna = new ArrayList<Boolean>();
         ArrayList<ArrayList<Boolean>> matrizBooleana= new ArrayList<ArrayList<Boolean>>();
@@ -203,5 +203,45 @@ public class Main {
         columna.add(true);
         columna.add(true);
         matrizBooleana.add(columna);
+
+        boolean seRepite=false;
+        for(int i = 0; i<matrizBooleana.size(); i++){
+            for(int j=0; j<matrizBooleana.get(i).size(); j++){
+                if(matrizBooleana.get(i)==matrizBooleana.get(j) && i!=j){
+                    seRepite=true;
+                }
+            }
+            if(!seRepite){
+                System.out.println(matrizBooleana.get(i) + " es la fila que no se repite.");
+            } else {
+                seRepite=false;
+            }
+        }
+        //tiempo de ejecucion de peor caso es: O(n²)
+// 8
+    */
+
+        ArrayList<Integer>v1= new ArrayList<Integer>();
+        ArrayList<Integer>v2= new ArrayList<Integer>();
+        ArrayList<Integer>nuevoArray= new ArrayList<Integer>();
+
+        int j=0, i=0;
+        while(i<v1.size()){
+            if(v1.get(i)>=v2.get(j) && j<v2.size()){
+                nuevoArray.add(v2.get(j));
+                j++;
+            } else {
+                nuevoArray.add(v1.get(i));
+                i++;
+            }
+        }
+        if(i<j){
+            int diferencia=j-i;
+            for(int k=0; k<diferencia;k++){
+                nuevoArray.add(v2.get(v1.size()+k));
+            }
+        }
+        
+
     }
 }
