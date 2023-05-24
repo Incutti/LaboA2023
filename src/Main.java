@@ -251,17 +251,17 @@ public class Main {
 
         int i=0, j=0, k=0;
         while(i<v1.size()){
-            if(v1.get(i)==v2.get(j) && v1.get(i)==v3.get(k)){
+
+            if(v1.get(i)<v2.get(j) && v1.get(i)<v3.get(k)){
+                i++;
+            } else if(v1.get(i)>v2.get(j) && v2.get(i)<v3.get(k) && j<v2.size()){
+                j++;
+            } else if(v3.get(i)<v1.get(j) && v1.get(i)>v3.get(k) && k<v3.size()){
+                k++;
+            } else if(v1.get(i)==v2.get(j) && v1.get(i)==v3.get(k)){
                 posicionesArray.add(i);
                 posicionesArray.add(j);
                 posicionesArray.add(k);
-            }
-            if(v1.get(i)<v2.get(j) && v1.get(i)<v3.get(k)){
-                i++;
-            } else if(v1.get(i)>v2.get(j) && v2.get(i)<v3.get(k)){
-                j++;
-            } else if(v3.get(i)<v1.get(j) && v1.get(i)>v3.get(k)){
-                k++;
             }
         }
 
