@@ -10,7 +10,7 @@ int ultimo2 (vector v) {
     int i = v.size();
     return v[ i -1 ];
 }
-RESPUESTA: Hay 2 operaciones elementales
+RESPUESTA: Hay 5 operaciones elementales
 
 
 int ultimo3 (vector v) {
@@ -36,7 +36,7 @@ void f1 (vector &vec) {
         i --;
     }
 }
-RESPUESTA: O(n)
+RESPUESTA: 3 + n/2 * 12 = 6n + 3 = O(n)
 
 
 void f2 (vector &vec) {
@@ -72,7 +72,7 @@ void f4 (vector &vec) {
         }
     }
 }
-RESPUESTA: O(n²)
+RESPUESTA: si vector es mayor a 1000, no cambia max_iter por lo q el peor caso sera siempre igual. O(1)
 
 
 void f5 (vector &v1 , vector &v2) {
@@ -85,7 +85,7 @@ void f5 (vector &v1 , vector &v2) {
     }
     return res ;
 }
-RESPUESTA: O(n)
+RESPUESTA: O(n+r)
 
 ----------------------------------------------------------------------
 
