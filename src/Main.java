@@ -219,7 +219,7 @@ public class Main {
         }
         //tiempo de ejecucion de peor caso es: O(n²)
 // 8
-    */
+
 
         ArrayList<Integer>v1= new ArrayList<Integer>();
         ArrayList<Integer>v2= new ArrayList<Integer>();
@@ -242,6 +242,32 @@ public class Main {
             }
         }
 
+// ej 9 guia complejidad
+*/
+        ArrayList<Integer>v1= new ArrayList<Integer>();
+        ArrayList<Integer>v2= new ArrayList<Integer>();
+        ArrayList<Integer>v3= new ArrayList<Integer>();
+        ArrayList<Integer>posicionesArray= new ArrayList<Integer>();
 
+// ej10 guia complejidad (use counting sort indirectamente)
+/*
+
+        ArrayList<Integer>listaDe1a3= new ArrayList<Integer>();
+        ArrayList<Integer>listaNueva= new ArrayList<Integer>();
+
+        int cantidad=0;
+        for(int i=1;i<=3;i++){
+            for (int j=0;j<listaDe1a3.size();j++){
+                if(i==listaDe1a3.get(j)){
+                    cantidad++;
+                }
+            }
+            for(int k=0; k<cantidad;k++){
+                listaNueva.add(i);
+            }
+            cantidad=0;
+        }
+
+         */
     }
 }
