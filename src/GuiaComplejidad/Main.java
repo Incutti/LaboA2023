@@ -141,7 +141,7 @@ public class Main {
 
         int j=0, i=0;
         while(i<v1.size()){
-            if(v1.get(i)>=v2.get(j) && j<v2.size()){
+            if(j<v2.size() && v1.get(i)>=v2.get(j)){
                 nuevoArray.add(v2.get(j));
                 j++;
             } else {
@@ -168,9 +168,9 @@ public class Main {
 
             if(v1.get(i)<v2.get(j) && v1.get(i)<v3.get(k)){
                 i++;
-            } else if(v1.get(i)>v2.get(j) && v2.get(i)<v3.get(k) && j<v2.size()){
+            } else if(j<v2.size() && v1.get(i)>v2.get(j) && v2.get(i)<v3.get(k)){
                 j++;
-            } else if(v3.get(i)<v1.get(j) && v1.get(i)>v3.get(k) && k<v3.size()){
+            } else if(k<v3.size() && v3.get(i)<v1.get(j) && v1.get(i)>v3.get(k)){
                 k++;
             } else if(v1.get(i)==v2.get(j) && v1.get(i)==v3.get(k)){
                 posicionesArray.add(i);
