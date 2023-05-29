@@ -218,6 +218,37 @@ public class Main {
             }
         }
         //tiempo de ejecucion de peor caso es: O(n²)
+
+
+// EJERCICIO 7 B y C de la guia de complejidad
+
+        ArrayList<Boolean>columna = new ArrayList<Boolean>();
+        ArrayList<ArrayList<Boolean>> matrizBooleana= new ArrayList<ArrayList<Boolean>>();
+
+        columna.add(true);
+        columna.add(false);
+        columna.add(false);
+        columna.add(true);
+        columna.add(true);
+        matrizBooleana.add(columna);
+
+        int contadorTrue=0;
+        ArrayList<Boolean>vectorUnico=new ArrayList<Boolean>();
+
+        for(int i=0; i<matrizBooleana.get(i).size(); i++){
+            for (int j=0; j<matrizBooleana.size(); j++){
+                if(matrizBooleana.get(j).get(i)){
+                    contadorTrue++;
+                }
+            }
+            if(contadorTrue%2==0){
+                vectorUnico.add(false);
+            } else {
+                vectorUnico.add(true);
+            }
+        }
+        //tiempo de ejecucion de peor caso es: O(n*m)
+
 // 8
 
 
@@ -243,7 +274,7 @@ public class Main {
         }
 
 // ej 9 guia complejidad
-*/
+
         ArrayList<Integer>v1= new ArrayList<Integer>();
         ArrayList<Integer>v2= new ArrayList<Integer>();
         ArrayList<Integer>v3= new ArrayList<Integer>();
@@ -266,7 +297,7 @@ public class Main {
         }
 
 // ej10 guia complejidad (use counting sort indirectamente)
-/*
+
 
         ArrayList<Integer>listaDe1a3= new ArrayList<Integer>();
         ArrayList<Integer>listaNueva= new ArrayList<Integer>();
@@ -283,7 +314,6 @@ public class Main {
             }
             cantidad=0;
         }
-
-         */
+*/
     }
 }
