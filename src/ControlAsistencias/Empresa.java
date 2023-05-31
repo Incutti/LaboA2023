@@ -9,6 +9,10 @@ public class Empresa {
         empleados=new HashSet<>();
     }
 
+    public Empresa(HashSet<Empleado> empleados) {
+        this.empleados = empleados;
+    }
+
     public HashSet<Empleado> getEmpleados() {
         return empleados;
     }

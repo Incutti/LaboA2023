@@ -2,6 +2,7 @@ package ControlAsistencias;
 
 import Enums.DiasHabiles;
 import Humanos.Persona;
+import tiempo.Fecha;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,6 +17,12 @@ public class Empleado extends Persona {
         super();
         diasQueTrabaja=new HashSet<>();
         registro=new HashSet<>();
+    }
+
+    public Empleado(String nombre, String apellido, int dni, int edad, Fecha fechaNacimiento, String direccion, HashSet<DiasHabiles> diasQueTrabaja, HashSet<LocalDateTime> registro) {
+        super(nombre, apellido, dni, edad, fechaNacimiento, direccion);
+        this.diasQueTrabaja = diasQueTrabaja;
+        this.registro = registro;
     }
 
     public HashSet<DiasHabiles> getDiasQueTrabaja() {
