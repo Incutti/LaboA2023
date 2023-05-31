@@ -59,6 +59,10 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public Persona(String nombre, Fecha fechaNacimiento) {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
     public String getNombre() {
         return nombre;
