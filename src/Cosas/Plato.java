@@ -9,13 +9,18 @@ public class Plato {
     public Plato(){
         nombre="Ceviche";
         precio=9000;
-        calorias=6574;
+        calorias=574;
     }
 
     public Plato(String nombre, double precio, int calorias){
         this.nombre=nombre;
         this.precio=precio;
         this.calorias=calorias;
+    }
+
+    public Plato(String nombre, int calorias) {
+        this.nombre = nombre;
+        this.calorias = calorias;
     }
 
     public String getNombre() {
