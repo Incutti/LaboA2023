@@ -1,40 +1,41 @@
 package Telefonia;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Sistema {
-    private ArrayList<Llamada> registroLlamadas;
-    private ArrayList<Empleado> empleadosRegistrados;
+    private HashSet<Llamada> registroLlamadas;
+    private HashSet<Empleado> empleadosRegistrados;
     public Sistema(){
-        registroLlamadas= new ArrayList<Llamada>();
-        empleadosRegistrados= new ArrayList<Empleado>();
+        registroLlamadas= new HashSet<Llamada>();
+        empleadosRegistrados= new HashSet<Empleado>();
     }
 
-    public Sistema(ArrayList<Llamada> registroLlamadas, ArrayList<Empleado> empleadosRegistrados) {
+    public Sistema(HashSet<Llamada> registroLlamadas, HashSet<Empleado> empleadosRegistrados) {
         this.registroLlamadas = registroLlamadas;
         this.empleadosRegistrados = empleadosRegistrados;
     }
 
-    public ArrayList<Llamada> getRegistroLlamadas() {
+    public HashSet<Llamada> getRegistroLlamadas() {
         return registroLlamadas;
     }
 
-    public void setRegistroLlamadas(ArrayList<Llamada> registroLlamadas) {
+    public void setRegistroLlamadas(HashSet<Llamada> registroLlamadas) {
         this.registroLlamadas = registroLlamadas;
     }
 
-    public ArrayList<Empleado> getEmpleadosRegistrados() {
+    public HashSet<Empleado> getEmpleadosRegistrados() {
         return empleadosRegistrados;
     }
 
-    public void setEmpleadosRegistrados(ArrayList<Empleado> empleadosRegistrados) {
+    public void setEmpleadosRegistrados(HashSet<Empleado> empleadosRegistrados) {
         this.empleadosRegistrados = empleadosRegistrados;
     }
 
     public void registrarLlamada(Llamada llamada){
         registroLlamadas.add(llamada);
     }
-    public ArrayList<Llamada> llamadaRealizadas(){
-        ArrayList<Llamada> llamadasOrdenadas = new ArrayList<Llamada>();
+    public HashSet<Llamada> llamadaRealizadas(){
+        HashSet<Llamada> llamadasOrdenadas = new HashSet<Llamada>();
         for(Empleado empleado:empleadosRegistrados){
             for(Llamada llamada:registroLlamadas){
                 if(llamada.getEmpOrigen().equals(empleado)){
