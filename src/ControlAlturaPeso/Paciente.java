@@ -69,9 +69,10 @@ public class Paciente extends Persona {
     public double diferenciaAltura(int anioMenor, int anioMayor){
         double diferencia;
         double alturaMenor=0, alturaMayor=0;
-        LocalDate fechaMenor=null, fechaMayor=null; // cuando el profe venga le pregunto en que inicializarlo para que no de error
+        LocalDate fechaMenor=null, fechaMayor=null;
         for(Map.Entry<LocalDate, Double> altura:registroAltura.entrySet()){
             if(fechaMenor==null || (altura.getKey().getYear()==anioMenor) && (altura.getKey().compareTo(fechaMenor) == 1)){
+                // lo inicializamos en null y pusimos la 1ra condicion por si es la primera vez q se hace el ciclo
                 fechaMenor=altura.getKey();
                 alturaMenor=altura.getValue();
             }
