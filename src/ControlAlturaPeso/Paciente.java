@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class Paciente extends Persona {
 
-    HashMap<LocalDate,Double> registroAltura;
-    HashMap<LocalDate,Double> registroPeso;
+    private HashMap<LocalDate,Double> registroAltura;
+    private HashMap<LocalDate,Double> registroPeso;
 
     public Paciente(){
         super();
