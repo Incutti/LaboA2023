@@ -1,21 +1,20 @@
 package Humanos;
 
 import tiempo.Fecha;
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
-    private int dni;
+    private int DNI;
     private int edad;
     private Fecha fechaNacimiento;
     private String direccion;
-    private int DNI;
     private int numTelefono;
     private String pais;
 
     public Persona() {
         nombre = "Pablo";
         apellido = "Crisnoselacome";
-        dni = 30525666;
+
         edad = 2023-fechaNacimiento.getAnio();
         fechaNacimiento = new Fecha();
         direccion = "Cabildo 5000";
@@ -53,7 +52,7 @@ public class Persona {
     public Persona(String nombre, String apellido, int dni, int edad, Fecha fechaNacimiento, String direccion) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
+        this.DNI = dni;
         this.edad = edad;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
