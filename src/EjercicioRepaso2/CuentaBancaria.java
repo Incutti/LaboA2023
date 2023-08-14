@@ -2,7 +2,7 @@ package EjercicioRepaso2;
 
 import java.util.ArrayList;
 
-public class CuentaBancaria {
+public abstract class CuentaBancaria {
     private ClienteBanco titular;
     private int cbu;
     private int numCuenta;
