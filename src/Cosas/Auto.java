@@ -7,6 +7,7 @@ public class Auto extends Vehiculo{
     private int velocidad;
     private String patente;
     private boolean descapotable;
+    private static int cantRuedas=4;
 
 
     public Auto() {
@@ -44,6 +45,14 @@ public class Auto extends Vehiculo{
 
     public void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
+    }
+
+    public static int getCantRuedas() {
+        return cantRuedas;
+    }
+
+    public static void setCantRuedas(int cantRuedas) {
+        Auto.cantRuedas = cantRuedas;
     }
 
     public int acelerar(){

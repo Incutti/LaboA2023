@@ -6,6 +6,7 @@ public class Camioneta extends Vehiculo{
     private String patente;
     private int capacidadCargaEnKG;
     private int cargaActualEnKG;
+    private static int cantRuedas=4;
 
     public Camioneta(){
         super();
@@ -44,6 +45,13 @@ public class Camioneta extends Vehiculo{
         this.capacidadCargaEnKG = capacidadCargaEnKG;
     }
 
+    public static int getCantRuedas() {
+        return cantRuedas;
+    }
+
+    public static void setCantRuedas(int cantRuedas) {
+        Camioneta.cantRuedas = cantRuedas;
+    }
 
     public void aniadirCarga(int cargaAAniadirEnKg){
         if(cargaAAniadirEnKg>0) {
