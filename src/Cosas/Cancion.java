@@ -1,5 +1,6 @@
 package Cosas;
 
+import Humanos.Musico;
 import Humanos.Persona;
 
 public class Cancion {
@@ -15,7 +16,7 @@ public class Cancion {
 
     public Cancion() {
         titulo = "";
-        autor = new Persona("");
+        autor = new Musico();
         duracion = 123;
         genero = "country";
     }
