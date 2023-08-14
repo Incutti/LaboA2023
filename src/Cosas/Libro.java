@@ -1,12 +1,13 @@
 package Cosas;
 
+import Humanos.Autor;
 import Humanos.Persona;
 import tiempo.*;
 import Enums.*;
 
 public class Libro {
     private String titulo;
-    private Persona autor;
+    private Autor autor;
     private int isbn;
     private int cantPaginas;
     private Editorial editorial;
@@ -14,7 +15,7 @@ public class Libro {
 
     public Libro() {
         titulo = "Aventuras por los campos";
-        autor = new Persona();
+        autor = new Autor();
         isbn = 342387635;
         cantPaginas = 395;
         editorial = Editorial.SUR;
@@ -23,13 +24,13 @@ public class Libro {
 
     public Libro(String titulo, int cantPaginas) {
         this.titulo = titulo;
-        autor = new Persona();
+        autor = new Autor();
         isbn = 111111;
         this.cantPaginas = cantPaginas;
 
     }
 
-    public Libro(String titulo, Persona autor, int isbn, int cantPaginas, Fecha fechaPublicacion, Editorial editorial) {
+    public Libro(String titulo, Autor autor, int isbn, int cantPaginas, Fecha fechaPublicacion, Editorial editorial) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -50,7 +51,7 @@ public class Libro {
         return autor;
     }
 
-    public void setAutor(Persona autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
