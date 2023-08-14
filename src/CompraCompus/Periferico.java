@@ -2,7 +2,7 @@ package CompraCompus;
 
 import java.util.ArrayList;
 
-public class Periferico extends Componente{
+public abstract class Periferico extends Componente{
     private String conector;
     private ArrayList<String>puertosValidos;
     private Boolean entrada;

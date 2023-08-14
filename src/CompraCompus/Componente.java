@@ -1,6 +1,6 @@
 package CompraCompus;
 
-public class Componente {
+public abstract class Componente {
     private String nombreFabricante;
     private String modelo;
     private float precioVenta;
