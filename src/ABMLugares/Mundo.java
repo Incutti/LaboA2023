@@ -83,11 +83,13 @@ public class Mundo {
         }
         return continenteMenor;
     }
+
+
     public int lugarPorCodigo(int cod){
         int pob=0;
         for(Lugar lugar:lugaresMundo){
             if(lugar.getCodigo()==cod){
-                pob=lugar.consultaPoblacion;
+                pob=lugar.consultaPoblacion();
             }
         }
         return pob;

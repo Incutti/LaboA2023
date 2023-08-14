@@ -3,7 +3,7 @@ package ABMLugares;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Lugar {
+public abstract class Lugar {
     private String nombre;
     private int codigo;
     private HashSet<Coordenadas> coordenadas;
@@ -43,9 +43,7 @@ public class Lugar {
     public void setCoordenadas(HashSet<Coordenadas> coordenadas) {
         this.coordenadas = coordenadas;
     }
-    public int consultaPoblacion(){
-        return 0;
-    }
+    public abstract int consultaPoblacion();
 
 
 }
