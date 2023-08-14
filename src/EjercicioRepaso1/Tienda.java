@@ -34,7 +34,7 @@ public class Tienda {
     }
     public void mayorYMenorStock(){
         int mayor=0, menor= listaProductos.get(0).getStock();
-        Producto productoMayor = new Producto(), productoMenor = new Producto();
+        Producto productoMayor = null, productoMenor = null;
 
         for(Producto producto:listaProductos){
             if(producto.getStock()>mayor){

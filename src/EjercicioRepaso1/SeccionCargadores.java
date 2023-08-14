@@ -1,6 +1,6 @@
 package EjercicioRepaso1;
 
-public class SeccionCargadores extends Producto{
+public abstract class SeccionCargadores extends Producto{
     public SeccionCargadores() {
         super();
     }
