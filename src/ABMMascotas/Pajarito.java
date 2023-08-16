@@ -13,19 +13,23 @@ public class Pajarito extends Animal{
     }
 
     @Override
-    public void saludo() {
-        for (int i = 0; i <getAlegria() ; i++) {
-            if (cantor){
-                System.out.println("en la radio hay un pollito");
-            }else{
-                System.out.println("pio");
+    public String saludo(boolean esDuenio) {
+        String sonido="";
+        if(esDuenio) {
+            for (int i = 0; i < getAlegria(); i++) {
+                if (cantor) {
+                    sonido = sonido + "en la radio hay un pollito  ";
+                } else {
+                    sonido = sonido + "pio ";
+                }
             }
         }
         if(getAlegria()>1) {
             setAlegria(getAlegria() - 1);
         }
-
+        return sonido;
     }
+
     @Override
     public String tipo(){
         return "Pajarito";

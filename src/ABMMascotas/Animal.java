@@ -45,7 +45,7 @@ public abstract class Animal {
         this.alegria = alegria;
     }
 
-    public abstract String saludo();
+    public abstract String saludo(boolean esDuenio);
     public abstract void alimentar();
     public abstract String tipo();
 }

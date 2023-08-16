@@ -9,14 +9,21 @@ public class Gato extends Animal{
     }
 
     @Override
-    public void saludo(){
-
-        for (int i = 0; i <getAlegria() ; i++) {
-            System.out.println("miau");
+    public String saludo(boolean esDuenio){
+        String sonido="";
+        if(esDuenio){
+            for(int i = 0; i <getAlegria() ; i++) {
+                sonido=sonido+"miau ";
+            }
+        } else {
+            for(int i = 0; i <getAlegria() ; i++) {
+                sonido=sonido+"MIAU! ";
+            }
         }
         if(getAlegria()>1) {
             setAlegria(getAlegria() - 1);
         }
+        return sonido;
     }
     @Override
     public String tipo(){

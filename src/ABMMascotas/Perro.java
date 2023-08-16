@@ -2,7 +2,7 @@ package ABMMascotas;
 
 public class Perro extends Animal{
 
-    public Perro(java.lang.String nombre,Duenio duenio, int alegria) {
+    public Perro(String nombre,Duenio duenio, int alegria) {
         super(nombre,alegria,duenio);
     }
 
@@ -11,10 +11,16 @@ public class Perro extends Animal{
     }
 
     @Override
-    public String saludo(){
+    public String saludo(boolean esDuenio){
         String sonido="";
-        for(int i = 0; i <getAlegria() ; i++) {
-            sonido=sonido+"guau ";
+        if(esDuenio){
+            for(int i = 0; i <getAlegria() ; i++) {
+                sonido=sonido+"guau ";
+            }
+        } else {
+            for(int i = 0; i <getAlegria() ; i++) {
+                sonido=sonido+"GUAU! ";
+            }
         }
         if(getAlegria()>1) {
             setAlegria(getAlegria() - 1);
