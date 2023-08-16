@@ -1,6 +1,6 @@
 package EjSensores;
 
-public class Sensor {
+public abstract class Sensor {
     private boolean estado; // 0=desconectafo | 1=conectado
     private double valor;
     private double umbral;
@@ -62,7 +62,5 @@ public class Sensor {
             alarma();
         }
     }
-    public void alarma(){
-        System.out.println("alarma");
-    }
+    public abstract void alarma();
 }
