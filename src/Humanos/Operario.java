@@ -2,7 +2,7 @@ package Humanos;
 
 import Humanos.Empleado;
 
-public class Operario extends Empleado {
+public abstract class Operario extends Empleado {
     public Operario(String nombre){
         super (nombre);
     }
