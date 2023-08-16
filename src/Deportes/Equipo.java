@@ -12,11 +12,12 @@ public class Equipo {
     private int numCapitan;
     private ArrayList<Boolean> diaDisponible;
     private Turno horaDisponible;
+    private static int cantJugadores=10;
 
     public Equipo(){
         nombreEquipo="El matador";
         barrioProcedencia="no tiene";
-        jugadores=new ArrayList<Jugador>(10);
+        jugadores=new ArrayList<Jugador>(cantJugadores);
         numCapitan=1;
         horaDisponible=Turno.MANIANA;
         diaDisponible=new ArrayList<Boolean>(6);
