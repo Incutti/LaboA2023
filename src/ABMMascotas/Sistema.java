@@ -52,7 +52,7 @@ public class Sistema {
                     animal.saludo(false);
                 }
                 if(animal instanceof Pez && ((Pez) animal).getVidasActuales()==0){
-                    listadoMascotas.remove(animal);
+                    eliminarMascota(animal);
                 }
             }
         }
