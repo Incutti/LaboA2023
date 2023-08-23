@@ -13,27 +13,24 @@ public class Pez extends Animal {
     public String saludo(boolean esDuenio){
 
         if(esDuenio){
-            for(int i = 0; i <getAlegria() ; i++) {
-                sonido=sonido+"guau ";
+            vidasActuales-=1;
+
+            if(vidasActuales>0){
+
+                return "Le quedan "+vidasActuales+" vidas";
+            } else {
+                return getNombre() + " ha muerto";
             }
         } else {
-            for(int i = 0; i <getAlegria() ; i++) {
-                sonido=sonido+"GUAU! ";
-            }
-        }
-        if(getAlegria()>1) {
-            setAlegria(getAlegria() - 1);
-        }
-        if(vidasActuales>0){
-            return "Le quedan "+vidasActuales+" vidas";
-        } else {
+            setVidasActuales(0);
             return getNombre() + " ha muerto";
         }
+
     } // hay q arreglar bien el metodo y en main tb
 
     @Override
     public void alimentar() {
-
+        vidasActuales+=1;
     }
 
     @Override
@@ -59,9 +56,5 @@ public class Pez extends Animal {
 
     public void setVidasActuales(int vidasActuales) {
         this.vidasActuales = vidasActuales;
-    }
-
-    public void saludarPez (){
-
     }
 }

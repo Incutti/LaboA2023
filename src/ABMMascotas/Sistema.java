@@ -46,16 +46,14 @@ public class Sistema {
     public void saludar(String nombreDuenio, String nombreMascota){
         for(Animal animal:listadoMascotas){
             if(animal.getNombre().equals(nombreMascota)){
-                if(!(animal instanceof Pez)){
-                    if(animal.getDuenio().getNombre().equals(nombreDuenio)){
-                        animal.saludo();
-                    }else if(!(animal instanceof Pajarito)){
-                        String saludoExtranio=animal.saludo().toUpperCase()+"!";
-                    }
-                } else {
-
+                if(animal.getDuenio().getNombre().equals(nombreDuenio)){
+                    animal.saludo(true);
+                }else{
+                    animal.saludo(false);
                 }
-
+                if(animal instanceof Pez && ((Pez) animal).getVidasActuales()==0){
+                    listadoMascotas.remove(animal);
+                }
             }
         }
     }
