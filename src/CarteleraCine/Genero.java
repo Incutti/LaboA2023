@@ -1,4 +1,5 @@
 package CarteleraCine;
 
-public class Genero {
+public enum Genero {
+    ACCION, AVENTURA, ROMANCE, DRAMA, COMEDIA
 }
