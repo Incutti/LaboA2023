@@ -28,6 +28,7 @@ public class Sistema {
             Animal a=(Animal)c.newInstance();
             a.setNombre(nombre);
             a.setDuenio(duenio);
+            listadoMascotas.add(a);
         } catch (InstantiationException e) {
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {
