@@ -34,12 +34,6 @@ public class Sistema {
         this.listaPartidos = listaPartidos;
     }
 
-    public void votar(Votante votante, Candidato candidato){
-        if(!(votante.isYaVoto())){
-            candidato.votar(votante.getProvinciaOrigen());
-            votante.setYaVoto(true);
-        }
-    }
 
     public float calculoPorcentajeVotos(Candidato candidato){
         float totalVotos = candidato.conteoVotos();
@@ -117,7 +111,7 @@ public class Sistema {
 
         Sistema s1 = new Sistema(padron1,listaPartidos1);
 
-        s1.votar(v1,c1);
+        v1.votar(c1);
         
         System.out.println("El candidato " + c1.getApellido() + ", " + c1.getNombre() + " obtuvo el " + s1.calculoPorcentajeVotos(c1) + "% de los votos.");
         System.out.println("Existe un " + s1.calculoPorcentajeNoVotantes() + "% del padron que no voto");

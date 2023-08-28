@@ -50,4 +50,10 @@ public class Votante extends Persona {
     public void setProvinciaOrigen(Provincia provinciaOrigen) {
         this.provinciaOrigen = provinciaOrigen;
     }
+    public void votar (Candidato candidato){
+        if(!(isYaVoto())){
+            setYaVoto(true);
+            candidato.votar(provinciaOrigen);
+        }
+    }
 }
