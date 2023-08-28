@@ -5,11 +5,12 @@ import tiempo.Fecha;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class Candidato extends Persona {
     private NombrePartido nombrePartido;
     private HashMap<String, HashSet<String>> listaPropuestas;
-    private HashMap<String, Integer> votosPorProvincia;
+    private HashMap<Provincia, Integer> votosPorProvincia;
 
     public Candidato() {
         super();
@@ -18,7 +19,7 @@ public class Candidato extends Persona {
         votosPorProvincia=new HashMap<>();
     }
 
-    public Candidato(String nombre, String apellido, int dni, Fecha fechaNacimiento, NombrePartido nombrePartido, HashMap<String, HashSet<String>> listaPropuestas, HashMap<String, Integer> votosPorProvincia) {
+    public Candidato(String nombre, String apellido, int dni, Fecha fechaNacimiento, NombrePartido nombrePartido, HashMap<String, HashSet<String>> listaPropuestas, HashMap<Provincia, Integer> votosPorProvincia) {
         super(nombre, apellido, dni, fechaNacimiento);
         this.nombrePartido = nombrePartido;
         this.listaPropuestas = listaPropuestas;
@@ -41,11 +42,27 @@ public class Candidato extends Persona {
         this.listaPropuestas = listaPropuestas;
     }
 
-    public HashMap<String, Integer> getVotosPorProvincia() {
+    public HashMap<Provincia, Integer> getVotosPorProvincia() {
         return votosPorProvincia;
     }
 
-    public void setVotosPorProvincia(HashMap<String, Integer> votosPorProvincia) {
+    public void setVotosPorProvincia(HashMap<Provincia, Integer> votosPorProvincia) {
         this.votosPorProvincia = votosPorProvincia;
+    }
+
+    public void votar(Provincia provincia) {
+        if(votosPorProvincia.containsKey(provincia)) {
+                votosPorProvincia.put(provincia,+1);
+            }else{
+                votosPorProvincia.put(provincia,1);
+            }
+        }
+
+    public int conteoVotos(){
+        int cantVotos=0;
+        for(Map.Entry<Provincia, Integer> provincia:votosPorProvincia.entrySet()){
+            cantVotos+=provincia.getValue();
+        }
+        return cantVotos;
     }
 }

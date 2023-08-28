@@ -21,6 +21,11 @@ public class Votante extends Persona {
         this.yaVoto = yaVoto;
         this.provinciaOrigen = provinciaOrigen;
     }
+    public Votante(Provincia provincia){
+        super();
+        yaVoto=false;
+        this.provinciaOrigen=provincia;
+    }
 
     public boolean isYaVoto() {
         return yaVoto;
