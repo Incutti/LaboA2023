@@ -1,4 +1,4 @@
-package P.A.S.O;
+package PASO;
 
 
 
@@ -31,8 +31,8 @@ public class Sistema {
 
     public void votar(Votante votante, Candidato candidato){
         if(!(votante.isYaVoto())){
-            candidato.getVotosPorProvincia().put(votante.getProvinciaOrigen().toString(),/*sumar un voto*/)
+            candidato.getVotosPorProvincia().put(votante.getProvinciaOrigen().toString(), /*sumar un voto*/)
         }
     }
-    
+
 }

@@ -1,6 +1,6 @@
-package P.A.S.O;
+package PASO;
 
-import static P.A.S.O.NombrePartido.EL_POLI_AVANZA;
+import static PASO.NombrePartido.EL_POLI_AVANZA;
 
 public class PartidoPolitico {
     private NombrePartido nombre;

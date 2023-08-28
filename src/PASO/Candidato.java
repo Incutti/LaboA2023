@@ -1,4 +1,4 @@
-package P.A.S.O;
+package PASO;
 
 import Humanos.Persona;
 import tiempo.Fecha;

@@ -1,9 +1,9 @@
-package P.A.S.O;
+package PASO;
 
 import Humanos.Persona;
 import tiempo.Fecha;
 
-import static P.A.S.O.Provincia.CABA;
+import static PASO.Provincia.CABA;
 
 public class Votante extends Persona {
     private boolean yaVoto;
