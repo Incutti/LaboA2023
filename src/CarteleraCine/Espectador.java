@@ -7,23 +7,23 @@ import java.util.HashSet;
 
 public class Espectador extends Persona {
 
-    private static int contadorAlta=1;
+    private static int contadorAlta=0;
     private int id;
     private String mailRegistro;
     private HashSet<Funcion> funcionesAsistidas;
 
     public Espectador(String nombre, String apellido, int dni, Fecha fechaNacimiento, String mailRegistro, HashSet<Funcion> funcionesAsistidas) {
         super(nombre, apellido, dni, fechaNacimiento);
-        id = contadorAlta;
         contadorAlta+=1;
+        id = contadorAlta;
         this.mailRegistro = mailRegistro;
         this.funcionesAsistidas = funcionesAsistidas;
     }
 
     public Espectador() {
         super();
-        id = contadorAlta;
         contadorAlta += 1;
+        id = contadorAlta;
         mailRegistro = "mensuh@gmail.com";
         funcionesAsistidas = new HashSet<>();
     }

@@ -4,23 +4,23 @@ public class Pelicula {
     private String titulo;
     private int duracion;
     private Genero genero;
-    private static int contador=1;
+    private static int contador=0;
     private int id;
 
     public Pelicula(String titulo, int duracion, Genero genero) {
         this.titulo = titulo;
         this.duracion = duracion;
         this.genero = genero;
-        id=contador;
         contador+=1;
+        id=contador;
     }
 
     public Pelicula() {
         titulo="El Pajaro Veloz";
         duracion=110;
         genero=Genero.AVENTURA;
-        id=contador;
         contador+=1;
+        id=contador;
     }
 
     public String getTitulo() {

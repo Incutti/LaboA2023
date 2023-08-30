@@ -130,10 +130,10 @@ public class Sistema {
             System.out.println(funcion.imprimirFuncion()+ " Esta Disponible");
         }
 
-        System.out.println("Hay " + e3.cantidadEspectadorAlta() + " usuarios registrados.");
+        System.out.println("Hay " + Espectador.cantidadEspectadorAlta() + " usuarios registrados.");
         System.out.println();
 
-        System.out.println("Hay " + p3.cantidadPeliculasExistentes() + " peliculas registradas.");
+        System.out.println("Hay " + Pelicula.cantidadPeliculasExistentes() + " peliculas registradas.");
         System.out.println();
 
         Pelicula cars = new Pelicula("Cars",120,Genero.ACCION);
