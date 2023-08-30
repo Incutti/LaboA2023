@@ -133,7 +133,7 @@ public class Sistema {
         System.out.println("Hay " + e3.cantidadEspectadorAlta() + " usuarios registrados.");
         System.out.println();
 
-        System.out.println("Hay " + p3.cantidadPeliculasExistentes() + " usuarios registrados.");
+        System.out.println("Hay " + p3.cantidadPeliculasExistentes() + " peliculas registradas.");
         System.out.println();
 
         Pelicula cars = new Pelicula("Cars",120,Genero.ACCION);
