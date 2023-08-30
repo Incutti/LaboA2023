@@ -37,7 +37,7 @@ public class Sistema {
     public void setFunciones(HashSet<Funcion> funciones) {
         this.funciones = funciones;
     }
-    public void agregarFuncion(Pelicula pelicula, LocalDateTime horario, Sala sala, int cantEntradasCompradas){
+    public void agregarFuncion(Pelicula pelicula, LocalDateTime horario, Sala sala){
         Funcion funcion = new Funcion(pelicula, horario, sala);
         funciones.add(funcion);
     }
@@ -79,8 +79,9 @@ public class Sistema {
         int cantidad = -1;
         Espectador espectadorMenor=new Espectador();
         for(Espectador espectador : espectadores){
-            if ( (cantidad==-1) || (cantidad < espectador.cantidadFuncionesCompradas()) ){
+            if ( (cantidad==-1) || (cantidad > espectador.getFuncionesAsistidas().size()) ){
                 espectadorMenor=espectador;
+                cantidad=espectador.getFuncionesAsistidas().size();
             }
         }
         return espectadorMenor;
@@ -108,13 +109,14 @@ public class Sistema {
         Funcion f2=new Funcion(p2,h2,s2);
         Funcion f3=new Funcion(p3,h3,s3);
 
-        Espectador e1 = new Espectador("Pepe","Lopez",27123789, new Fecha(),"hola1@gmail.com",new HashSet<>());
-        Espectador e2 = new Espectador("Pepa","Lopaz",27123790, new Fecha(),"hola1@gmail.com",new HashSet<>());
-        Espectador e3 = new Espectador("Pepi","Lopiz",27123791, new Fecha(),"hola1@gmail.com",new HashSet<>());
-
         funciones.add(f1);
         funciones.add(f2);
         funciones.add(f3);
+
+        Espectador e1 = new Espectador("Pepe","Lopez",27123789, new Fecha(),"hola1@gmail.com",funciones);
+        Espectador e2 = new Espectador("Pepa","Lopaz",27123790, new Fecha(),"hola1@gmail.com",funciones);
+        Espectador e3 = new Espectador("Pepi","Lopiz",27123791, new Fecha(),"hola1@gmail.com",funciones);
+
 
         espectadores.add(e1);
         espectadores.add(e2);
@@ -128,5 +130,24 @@ public class Sistema {
             System.out.println(funcion.imprimirFuncion()+ " Esta Disponible");
         }
 
+        System.out.println("Hay " + e3.cantidadEspectadorAlta() + " usuarios registrados.");
+        System.out.println();
+
+        System.out.println("Hay " + p3.cantidadPeliculasExistentes() + " usuarios registrados.");
+        System.out.println();
+
+        Pelicula cars = new Pelicula("Cars",120,Genero.ACCION);
+        sis.getFunciones().add(new Funcion(cars,h3,s3));
+        for(Funcion funcion:funciones){
+            System.out.println(funcion.imprimirFuncion());
+        }
+        System.out.println();
+
+        System.out.println(sis.peliculaMasVista().getTitulo());
+        System.out.println();
+
+        Espectador e4 = new Espectador("Pep","perez",2713791, new Fecha(),"hoa1@gmail.com",new HashSet<>());
+        espectadores.add(e4);
+        System.out.println(sis.espectadorConMenosEntradas().getApellido());
     }
 }

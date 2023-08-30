@@ -62,6 +62,6 @@ public class Espectador extends Persona {
 
     public static int cantidadEspectadorAlta(){return contadorAlta;}
 
-    public int cantidadFuncionesCompradas(){return funcionesAsistidas.size(); }
+
 
 }
