@@ -1,4 +1,6 @@
 package Animales;
 
-public class Felino {
+public abstract class Felino extends Animal{
+
+
 }

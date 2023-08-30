@@ -1,4 +1,4 @@
 package Animales;
 
-public class Canido {
+public abstract class Canido extends Animal{
 }
