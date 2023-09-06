@@ -1,5 +1,7 @@
 package GuiaComplejidad;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 /*
@@ -135,7 +137,7 @@ public class Main {
 // 8
 
 
-        ArrayList<Integer>v1= new ArrayList<Integer>();
+        ArrayList<Integer> v1= new ArrayList<Integer>();
         ArrayList<Integer>v2= new ArrayList<Integer>();
         ArrayList<Integer>nuevoArray= new ArrayList<Integer>();
 

@@ -46,8 +46,8 @@ public class Orden {
             for (Componente componente:componentes){
                 precioTotal=precioTotal+componente.getPrecioVenta();
             }
-            for(Componente componente: sistema.getStock()){
-                for (Componente componente1:componentes){
+            for( Componente componente1:componentes){
+                for (Componente componente: sistema.getStock()){
                     if(componente==componente1){
                         sistema.getStock().remove(componente);
                     }

@@ -15,8 +15,8 @@ public abstract class Persona {
         nombre = "Pablo";
         apellido = "Crisnoselacome";
 
-        edad = 2023-fechaNacimiento.getAnio();
         fechaNacimiento = new Fecha();
+        edad = 2023-fechaNacimiento.getAnio();
         direccion = "Cabildo 5000";
         DNI = 45456678;
         numTelefono=1133445566;
