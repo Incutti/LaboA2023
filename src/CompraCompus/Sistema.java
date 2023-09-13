@@ -1,21 +1,12 @@
 package CompraCompus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Sistema {
     private ArrayList<Orden> computadorasVendidas;
-    private ArrayList<Componente> stock;
-
-
-    public Sistema(){
-        computadorasVendidas=new ArrayList<Orden>();
-        stock=new ArrayList<Componente>();
-    }
-
-    public Sistema(ArrayList<Orden> computadorasVendidas, ArrayList<Componente> stock) {
-        this.computadorasVendidas = computadorasVendidas;
-        this.stock = stock;
-    }
+    private HashSet<Componente> stock;
 
     public ArrayList<Orden> getComputadorasVendidas() {
         return computadorasVendidas;
@@ -25,13 +16,24 @@ public class Sistema {
         this.computadorasVendidas = computadorasVendidas;
     }
 
-    public ArrayList<Componente> getStock() {
+    public Sistema() {
+        computadorasVendidas=new ArrayList<>();
+        stock=new HashSet<>();
+    }
+
+    public Sistema(ArrayList<Orden>computadorasVendidas, HashSet<Componente>stock) {
+        this.computadorasVendidas=computadorasVendidas;
+        this.stock=stock;
+    }
+
+    public HashSet<Componente> getStock() {
         return stock;
     }
 
-    public void setStock(ArrayList<Componente> stock) {
+    public void setStock(HashSet<Componente> stock) {
         this.stock = stock;
     }
+
     public void agregarOrden(Orden orden){computadorasVendidas.add(orden);}
     public void eliminarOrden(Orden orden){computadorasVendidas.remove(orden);}
 

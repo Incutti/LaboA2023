@@ -10,7 +10,7 @@ public class Orden {
     private Tarjeta tarjeta;
     private ArrayList<Componente> componentes;
     private double precioTotal;
-    
+
 
     public Orden(){
         cliente=new Cliente();
@@ -22,9 +22,13 @@ public class Orden {
             precioTotal=precioTotal+(precioTotal*100/5);
         }
     }
-    public Orden(Cliente cliente, Tarjeta tarjeta, ArrayList<Componente> componentes) {
+    public Orden(Cliente cliente, Tarjeta tarjeta, ArrayList<Componente> componentes, Sistema sistema) {
 
-        if(validacionOrden(new Sistema())){
+        try {
+            validacionOrden(sistema);
+            for (Componente componente:componentes){
+                verificacionStock(componente,sistema);
+            }
             this.cliente = cliente;
             metodoPago = true;
             this.tarjeta = tarjeta;
@@ -33,28 +37,35 @@ public class Orden {
                 precioTotal=precioTotal+componente.getPrecioVenta();
                 precioTotal=precioTotal+(precioTotal*100/5);
             }
-        } else{
-            System.out.println("Faltan componentes en la orden");
+        }catch (StockNoDisponible e1){
+            System.out.println(e1);
+        } catch (FaltaComponenteExeption e) {
+            System.out.println(e);
         }
     }
 
-    public Orden(Cliente cliente, ArrayList<Componente> componentes,Sistema sistema) {
-        if(validacionOrden(new Sistema())) {
-            this.cliente = cliente;
-            metodoPago = false;  // efectivo
-            this.componentes = componentes;
-            for (Componente componente:componentes){
-                precioTotal=precioTotal+componente.getPrecioVenta();
-            }
-            for( Componente componente1:componentes){
-                for (Componente componente: sistema.getStock()){
-                    if(componente==componente1){
-                        sistema.getStock().remove(componente);
+    public Orden(Cliente cliente, ArrayList<Componente> componentes,Sistema sistema) throws StockNoDisponible{
+        try {
+                validacionOrden(sistema);
+                this.cliente = cliente;
+                metodoPago = false;  // efectivo
+                this.componentes = componentes;
+                for (Componente componente:componentes){
+                    precioTotal=precioTotal+componente.getPrecioVenta();
+                }
+                for(Componente componente1:componentes){
+                    for (Componente componente: sistema.getStock()){
+                        if(componente==componente1){
+                            try {
+                                verificacionStock(componente,sistema);
+                            }catch (StockNoDisponible e){
+                                System.out.println(e);
+                            }
+                        }
                     }
                 }
-            }
-        } else{
-            System.out.println("Faltan componentes en la orden");
+        } catch (FaltaComponenteExeption e) {
+            System.out.println(e);
         }
     }
 
@@ -104,8 +115,9 @@ public class Orden {
     public void eliminarComponenteOrden(Componente componente){
         componentes.remove(componente);
     }
-    public boolean validacionOrden(Sistema sistema){
-        boolean sirve=false, CPU=false, entrada=false, salida=false;
+
+    public void validacionOrden(Sistema sistema) throws FaltaComponenteExeption{
+        Boolean CPU=false, entrada=false, salida=false;
         for(Componente componente:componentes){
             for(Componente elemStock: sistema.getStock()){
                 if(elemStock==componente){
@@ -115,8 +127,9 @@ public class Orden {
                 }
             }
         }
-        if(CPU && entrada && salida){ sirve=true; }
-        return sirve;
+        if(!(CPU && entrada && salida)){
+            throw new FaltaComponenteExeption("Falta algun componente en su orden");
+        }
     }
 
     public void cantidadComponentes(){
@@ -133,5 +146,16 @@ public class Orden {
         }
         System.out.println("Hay " + cantEntrada + " dispositivos de entrada y " + cantSalida + " de salida.");
     }
+
+    public void verificacionStock(Componente componente, Sistema sistema)throws StockNoDisponible{
+        if (componente.getStock()>0){
+            sistema.getStock().remove(componente);
+            componente.setStock(componente.getStock()-1);
+            sistema.getStock().add(componente);
+        }else{
+            throw new StockNoDisponible("No hay Stock disponible para la compra");
+        }
+    }
+
 }
 
