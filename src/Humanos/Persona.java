@@ -22,6 +22,11 @@ public abstract class Persona {
         numTelefono=1133445566;
         pais = "bolivia";
     }
+    public Persona(String nombre, String apellido, int dni){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.DNI=dni;
+    }
     public Persona(String nombre, String apellido, int dni, Fecha fechaNacimiento){
         this.nombre=nombre;
         this.apellido=apellido;
