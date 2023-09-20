@@ -39,7 +39,6 @@ public class Sistema {
 
     public void consumicion(Usuario usuario, Bebida bebida, int cantidad) throws StockFaltanteException {
         verificarStock(cantidad, bebida);
-        stock.put(bebida,stock.get(bebida)-cantidad);
         if(usuarios.contains(usuario)){
             if(usuario.getListaBebidasConsumidas().containsKey(bebida)){
                 usuario.getListaBebidasConsumidas().put(bebida,usuario.getListaBebidasConsumidas().get(bebida)+cantidad);
@@ -53,6 +52,7 @@ public class Sistema {
                 e.getMessage();
             }
         }
+        stock.put(bebida,stock.get(bebida)-cantidad);
 
     }
 
@@ -64,11 +64,12 @@ public class Sistema {
 
     public void verificarExistenciaHidratacion()throws PersonasInexistentesException{
         Usuario usuarioActual=new Usuario();
-        boolean p=true;
+        boolean primera=true;
         boolean usuariosDiff=false;
         for (Usuario usuario:usuarios){
-            if(p){
+            if(primera){
                 usuarioActual=usuario;
+                primera=false;
             }else if (usuarioActual.calcularCoeficienteHidratacion()!=usuario.calcularCoeficienteHidratacion()){
                 usuariosDiff=true;
             }
@@ -95,7 +96,7 @@ public class Sistema {
 
     public Usuario usuarioConMenorHidratacion()throws PersonasInexistentesException{
         verificarExistenciaHidratacion();
-        boolean primerVuelta =true;
+        boolean primerVuelta = true;
         Usuario usuarioMenor = new Usuario();
         for (Usuario usuario:usuarios){
             if(primerVuelta){
@@ -119,12 +120,44 @@ public class Sistema {
         Sistema s1=new Sistema();
 
         HashMap<Bebida, Integer> bebidasEnStock=new HashMap<>();
-        bebidasEnStock.put(bal1,5);
-        bebidasEnStock.put(baz1,5);
-        bebidasEnStock.put(bn1,5);
+        bebidasEnStock.put(bal1,10);
+        bebidasEnStock.put(baz1,15);
+        bebidasEnStock.put(bn1,20);
         s1.setStock(bebidasEnStock);
 
-        
+        HashSet<Usuario> nuevosUsuarios=new HashSet<>();
+        nuevosUsuarios.add(u1);
+        nuevosUsuarios.add(u2);
+        s1.setUsuarios(nuevosUsuarios);
+
+
+        try {
+            s1.agregarUsuario(u3);
+            s1.agregarUsuario(u2);
+        } catch (DniRepetidoException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        try {
+            s1.consumicion(u1,bn1,3);
+            s1.consumicion(u2,bn1,2);
+        } catch (StockFaltanteException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println();
+        u1.conocerCoeficienteHidratacion();
+
+
+        try {
+            System.out.println();
+            System.out.println("El usuario " + s1.usuarioConMayorHidratacion().getNombre() + " es el que mayor hidratacion tiene con un valor de: "+ s1.usuarioConMayorHidratacion().calcularCoeficienteHidratacion());
+            System.out.println();
+            System.out.println("El usuario " + s1.usuarioConMenorHidratacion().getNombre() + " es el que menor hidratacion tiene con un valor de: "+ s1.usuarioConMenorHidratacion().calcularCoeficienteHidratacion());
+        } catch (PersonasInexistentesException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
 
