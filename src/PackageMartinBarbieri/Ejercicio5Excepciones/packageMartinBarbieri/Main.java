@@ -46,5 +46,7 @@ public class Main {
         System.out.println("El Bebedor " + s1.mejorCoeficiente().getNombre() + " es el que mayor hidratacion tiene con un valor de: "+ s1.mejorCoeficiente().coeficienteDeHidratacion());
         System.out.println();
         System.out.println("El Bebedor " + s1.peorCoeficiente().getNombre() + " es el que menor hidratacion tiene con un valor de: "+ s1.peorCoeficiente().coeficienteDeHidratacion());
+
+        //en mejor y peor coeficiente cambie los .equals por == pq sino tiraba error
     }
 }
