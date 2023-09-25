@@ -8,12 +8,15 @@ import java.util.HashSet;
 
 public class Sistema {
     private HashSet<Prestable>listaElementos;
+    private HashSet<Trader>usuarios;
 
     public Sistema(){
         listaElementos=new HashSet<>();
+        usuarios=new HashSet<>();
     }
-    public Sistema(HashSet<Prestable> listaElementos) {
+    public Sistema(HashSet<Prestable> listaElementos,HashSet<Trader> usuarios) {
         this.listaElementos = listaElementos;
+        this.usuarios=usuarios;
     }
 
     public HashSet<Prestable> getListaElementos() {
@@ -24,11 +27,43 @@ public class Sistema {
         this.listaElementos = listaElementos;
     }
 
+    public HashSet<Trader> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(HashSet<Trader> usuarios) {
+        this.usuarios = usuarios;
+    }
+
     public void agregarElemento(Prestable elemento){
         if (elemento.agregarElemento()){
             listaElementos.add(elemento);
         }
     }
+    public Boolean dar(Trader dador, Prestable objeto){
+        usuarios.add(dador);
+        if (dador.getPertenencias().contains(objeto) && objeto.prestar()){
+            return true;
+        } else if(!dador.getPertenencias().contains(objeto) && objeto.prestar()){
+            System.out.println("Usted no tiene lo que quiere prestar");
+            return false;
+        } else {
+            System.out.println("El objeto no puede ser prestado.");
+            return false;
+        }
+    }
+    public void recibir(Trader recibidor, Prestable objeto){
+        usuarios.add(recibidor);
+        recibidor.getPertenencias().add(objeto);
+        System.out.println("Intercambio exitoso!!!!!!!");
+    }
+    public void ejecutarPrestamo(Trader prestador, Trader recibidor, Prestable objeto){
+        if(dar(prestador,objeto)){
+            prestador.getPertenencias().remove(objeto);
+            recibir(recibidor,objeto);
+        }
+    }
+
 
     public static void main(String[] args){
 
