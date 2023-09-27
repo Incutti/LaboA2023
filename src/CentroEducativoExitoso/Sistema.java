@@ -3,7 +3,7 @@ package CentroEducativoExitoso;
 import java.time.LocalDate;
 import java.util.HashSet;
 
-public class Sistema {
+public class    Sistema {
     private  HashSet<Alumno> alumnos;
 
     public Sistema(HashSet<Alumno> alumnos) {
