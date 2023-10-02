@@ -22,14 +22,12 @@ public class    Sistema {
     public int cantAprobados(){
         int contador=0;
         for(Alumno alumno:alumnos){
-            for(Examen examen:alumno.getExamenesRealizados()){
-                if(examen.calcularAprobacion()){
+            if (alumno.aprobacionAlumno())
                     contador++;
                 }
-            }
-        }
         return contador;
     }
+
     public static void main(String[] args) {
 
         ExamenEscrito ee1= new ExamenEscrito(LocalDate.now(),10);
@@ -39,18 +37,28 @@ public class    Sistema {
         ExamenOral eo2=new ExamenOral(LocalDate.now(),NivelSatisfaccion.INSUFICIENTE);
 
         HashSet<Examen> examenes=new HashSet<>();
+        HashSet<Examen> examenes1=new HashSet<>();
 
         examenes.add(ee1);
         examenes.add(ee2);
         examenes.add(eo1);
         examenes.add(eo2);
 
+        examenes1.add(ee1);
+
         Alumno alumno = new Alumno("Juan", "Sampi",12312312,examenes);
+        Alumno alumno1 = new Alumno("Juan", "Sampi",12312312,examenes1);
 
         HashSet<Alumno> alumnos=new HashSet<>();
+
         alumnos.add(alumno);
+        alumnos.add(alumno1);
 
         Sistema s1=new Sistema(alumnos);
+
+        System.out.println("la cantidad de aprobados es de "+ s1.cantAprobados());
+
+
 
 
     }

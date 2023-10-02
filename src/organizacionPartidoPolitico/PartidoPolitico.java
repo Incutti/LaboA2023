@@ -46,4 +46,10 @@ public class PartidoPolitico {
     public void setEnviadoresMensajes(HashSet<Mensajeria> enviadoresMensajes) {
         this.enviadoresMensajes = enviadoresMensajes;
     }
+
+    public void hacerPolitica(PartidoPolitico partido){
+        for(Mensajeria mensajero : enviadoresMensajes){
+            mensajero.mensajeApoyo(partido);
+        }
+    }
 }
