@@ -20,7 +20,7 @@ public class ExamenOral extends Examen {
 
     @Override
     public boolean calcularAprobacion() {
-        return !(nivelSatisfaccion.equals(NivelSatisfaccion.INSUFICIENTE));
+        return (nivelSatisfaccion.ordinal()>1); //tengo que poner que esté declarado despues de la primer cosa declarada
     }
 
 }

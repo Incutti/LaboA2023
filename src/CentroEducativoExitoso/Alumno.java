@@ -24,7 +24,7 @@ public class Alumno extends Persona {
     public Boolean aprobacionAlumno(){
         for(Examen examen:examenesRealizados){
             if(!examen.calcularAprobacion()){
-                System.out.println("El examen realizado el dia "+examen.getFechaRealzacion().getDayOfMonth()+" del "+examen.getFechaRealzacion().getMonthValue()+" está desaprobado, por lo tanto... REPETÍS!!!!");
+                System.out.println("El examen realizado el dia "+examen.getFechaRealzacion().getDayOfMonth()+"/"+examen.getFechaRealzacion().getMonthValue()+" está desaprobado, por lo tanto... REPETÍS!!!!");
                 return false;
             }
         }
