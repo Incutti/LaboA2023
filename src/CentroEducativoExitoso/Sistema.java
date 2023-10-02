@@ -45,6 +45,7 @@ public class    Sistema {
         examenes.add(eo2);
 
         examenes1.add(ee1);
+        examenes1.add(eo1);
 
         Alumno alumno = new Alumno("Juan", "Sampi",12312312,examenes);
         Alumno alumno1 = new Alumno("Juan", "Sampi",12312312,examenes1);
