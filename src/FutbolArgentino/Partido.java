@@ -1,5 +1,7 @@
 package FutbolArgentino;
 
+import Humanos.Jugador;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -9,15 +11,19 @@ public class Partido {
     private LocalDateTime fechaPartido;
     private ArrayList<Gol>golesEquipoLocal;
     private ArrayList<Gol>golesEquipoVisitante;
-    private int cantTirosAPuerta;
+    private int cantTirosAPuertaLocal;
+    private int cantTirosAPuertaVisitante;
 
-    public Partido(Equipo equipoLocal, Equipo equipoVisitante, LocalDateTime fechaPartido, ArrayList<Gol> golesEquipoLocal, ArrayList<Gol> golesEquipoVisitante, int cantTirosAPuerta) {
+
+    public Partido(Equipo equipoLocal, Equipo equipoVisitante, LocalDateTime fechaPartido, ArrayList<Gol> golesEquipoLocal, ArrayList<Gol> golesEquipoVisitante, int cantTirosAPuertaLocal, int cantTirosAPuertaVisitante) {
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.fechaPartido = fechaPartido;
         this.golesEquipoLocal = golesEquipoLocal;
         this.golesEquipoVisitante = golesEquipoVisitante;
-        this.cantTirosAPuerta = cantTirosAPuerta;
+        this.cantTirosAPuertaLocal = cantTirosAPuertaLocal;
+        this.cantTirosAPuertaVisitante = cantTirosAPuertaVisitante;
+
     }
 
     public Equipo getEquipoLocal() {
@@ -60,11 +66,19 @@ public class Partido {
         this.golesEquipoVisitante = golesEquipoVisitante;
     }
 
-    public int getCantTirosAPuerta() {
-        return cantTirosAPuerta;
+    public int getCantTirosAPuertaLocal() {
+        return cantTirosAPuertaLocal;
     }
 
-    public void setCantTirosAPuerta(int cantTirosAPuerta) {
-        this.cantTirosAPuerta = cantTirosAPuerta;
+    public void setCantTirosAPuertaLocal(int cantTirosAPuertaLocal) {
+        this.cantTirosAPuertaLocal = cantTirosAPuertaLocal;
+    }
+
+    public int getCantTirosAPuertaVisitante() {
+        return cantTirosAPuertaVisitante;
+    }
+
+    public void setCantTirosAPuertaVisitante(int cantTirosAPuertaVisitante) {
+        this.cantTirosAPuertaVisitante = cantTirosAPuertaVisitante;
     }
 }

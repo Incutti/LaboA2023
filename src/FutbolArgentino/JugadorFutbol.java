@@ -12,6 +12,7 @@ public abstract class JugadorFutbol extends Persona implements Contrato{
     private HashSet<Equipo> historialEquipos;
     private int numCamiseta;
     private Equipo equipoActual;
+    private int cantPartidos;
 
     public JugadorFutbol(){
         super();
@@ -19,14 +20,16 @@ public abstract class JugadorFutbol extends Persona implements Contrato{
         historialEquipos=new HashSet<>();
         numCamiseta=99;
         equipoActual=new Equipo();
+        cantPartidos=0;
     }
 
-    public JugadorFutbol(String nombre, Fecha fechaNacimiento, Provincia provinciaProcedencia, HashSet<Equipo> historialEquipos, int numCamiseta, Equipo equipoActual) {
+    public JugadorFutbol(String nombre, Fecha fechaNacimiento, Provincia provinciaProcedencia, HashSet<Equipo> historialEquipos, int numCamiseta, Equipo equipoActual, int cantPartidos) {
         super(nombre, fechaNacimiento);
         this.provinciaProcedencia = provinciaProcedencia;
         this.historialEquipos = historialEquipos;
         this.numCamiseta = numCamiseta;
-        this.equipoActual=equipoActual;
+        this.equipoActual = equipoActual;
+        this.cantPartidos = cantPartidos;
     }
 
     public Provincia getProvinciaProcedencia() {
@@ -59,6 +62,14 @@ public abstract class JugadorFutbol extends Persona implements Contrato{
 
     public void setEquipoActual(Equipo equipoActual) {
         this.equipoActual = equipoActual;
+    }
+
+    public int getCantPartidos() {
+        return cantPartidos;
+    }
+
+    public void setCantPartidos(int cantPartidos) {
+        this.cantPartidos = cantPartidos;
     }
 
     public void verificarPasado(Equipo equipo) throws YaJugoException{

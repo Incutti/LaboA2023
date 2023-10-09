@@ -7,12 +7,14 @@ import java.util.HashSet;
 
 public class JugadorCampo extends JugadorFutbol {
     private double porcentajeGolesConvertidos;
+    private int cantGoles;
     private int cantAsistencias;
 
-    public JugadorCampo(String nombre, Fecha fechaNacimiento, Provincia provinciaProcedencia, HashSet<Equipo> historialEquipos, int numCamiseta, double porcentajeGolesConvertidos, int cantAsistencias, Equipo equipoActual) {
-        super(nombre, fechaNacimiento, provinciaProcedencia, historialEquipos, numCamiseta,equipoActual);
+    public JugadorCampo(String nombre, Fecha fechaNacimiento, Provincia provinciaProcedencia, HashSet<Equipo> historialEquipos, int numCamiseta, double porcentajeGolesConvertidos, int cantAsistencias, Equipo equipoActual, int cantPartidos, int cantGoles) {
+        super(nombre, fechaNacimiento, provinciaProcedencia, historialEquipos, numCamiseta,equipoActual,cantPartidos);
         this.porcentajeGolesConvertidos = porcentajeGolesConvertidos;
         this.cantAsistencias = cantAsistencias;
+        this.cantGoles=cantGoles;
     }
 
     public double getPorcentajeGolesConvertidos() {
@@ -31,6 +33,17 @@ public class JugadorCampo extends JugadorFutbol {
         this.cantAsistencias = cantAsistencias;
     }
 
+    public int getCantGoles() {
+        return cantGoles;
+    }
+
+    public void setCantGoles(int cantGoles) {
+        this.cantGoles = cantGoles;
+    }
+
+    public void actualizarPorcentaje(){
+        porcentajeGolesConvertidos=((double) (cantGoles * super.getCantPartidos()) /100);
+    }
 
     @Override
     public void contratar(Equipo equipo) {

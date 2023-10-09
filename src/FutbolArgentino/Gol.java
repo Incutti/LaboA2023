@@ -1,29 +1,29 @@
 package FutbolArgentino;
 
 public class Gol {
-    private JugadorFutbol goleador;
-    private JugadorFutbol asistidor;
+    private JugadorCampo goleador;
+    private JugadorCampo asistidor;
     private int minuto;
 
-    public Gol(JugadorFutbol goleador, JugadorFutbol asistidor, int minuto) {
+    public Gol(JugadorCampo goleador, JugadorCampo asistidor, int minuto) {
         this.goleador = goleador;
         this.asistidor = asistidor;
         this.minuto = minuto;
     }
 
-    public JugadorFutbol getGoleador() {
+    public JugadorCampo getGoleador() {
         return goleador;
     }
 
-    public void setGoleador(JugadorFutbol goleador) {
+    public void setGoleador(JugadorCampo goleador) {
         this.goleador = goleador;
     }
 
-    public JugadorFutbol getAsistidor() {
+    public JugadorCampo getAsistidor() {
         return asistidor;
     }
 
-    public void setAsistidor(JugadorFutbol asistidor) {
+    public void setAsistidor(JugadorCampo asistidor) {
         this.asistidor = asistidor;
     }
 
