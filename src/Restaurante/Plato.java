@@ -5,12 +5,14 @@ public class Plato {
     private String descripcion;
     private int precio;
     private Tipo tipo;
+    private Chef chefACargo;
 
-    public Plato(String nombre, String descripcion, int precio, Tipo tipo) {
+    public Plato(String nombre, String descripcion, int precio, Tipo tipo, Chef chefACargo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.tipo = tipo;
+        this.chefACargo=chefACargo;
     }
 
     public String getNombre() {
@@ -43,5 +45,13 @@ public class Plato {
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
+    }
+
+    public Chef getChefACargo() {
+        return chefACargo;
+    }
+
+    public void setChefACargo(Chef chefACargo) {
+        this.chefACargo = chefACargo;
     }
 }
